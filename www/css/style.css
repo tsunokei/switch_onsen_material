@@ -1,0 +1,33 @@
+.list{
+	background-color:rgba(0,249,47,0.001);
+}
+
+.list-inner{
+	background-color: white;
+	/*color: rgba(0,249,47,0.1);*/
+	padding: 20px 0;
+	padding-left: 10px;
+	box-shadow: 0.5px 0.5px 0.2px 0.1px;
+}
+body{
+	margin:0;
+	padding:0;
+	height:100%;
+}
+
+p{
+	margin:0;
+	padding:0;
+}
+
+.title{
+	color:black;
+	opacity:0.8;
+}
+.main-content{
+	background-color:rgba(0,249,47,0.08);
+	/*position: relative;*/
+}
+.clearbutton{
+	/*position: absolute;*/
+}
