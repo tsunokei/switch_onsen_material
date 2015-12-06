@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,700,700italic,500italic' rel='stylesheet' type='text/css'>
+    	<title>エラー画面</title>
+    	<link rel="stylesheet" href="../lib/onsenui/css/onsenui.css" type="text/css" media="all" />
+	    <link rel="stylesheet" href="../lib/onsenui/css/onsen-css-components.css" type="text/css" media="all" />
+	    <link rel="stylesheet" href="app.css" type="text/css" media="all" />
+	    <link rel="stylesheet" href="../css/style.css" type="text/css">
+
+	    <script src="../lib/onsenui/js/onsenui.js"></script>
+	    <script src="../lib/angular/angular.js"></script>
+	    <script src="../lib/onsenui/js/angular-onsenui.js"></script>
+	    <script src="app.js"></script>
+	</head>
+	<body>
+		<ons-page style="text-align:center;">
+			<div style="text-align:center;">
+				<div style="height:100px">
+				</div>
+				<p>赤外線情報を取得できませんでした。</p>
+				<br>
+				<p>もう一度赤外線を照射してください</p>
+				<ons-button onclick="location.href='../newir/index.html'" style="padding:0 100px;">
+				Again
+				</ons-button>
+			</div>
+		</ons-page>
+	</body>
+</html>
