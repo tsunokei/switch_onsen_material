@@ -1,55 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
-    <meta charset="utf-8" />
+  <meta charset="utf-8">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,700,700italic,500italic' rel='stylesheet' type='text/css'>
-    <title>Onsen UI 2.0 Quickstart</title>
 
-    <script src="components/loader.js"></script>
-    <script src="lib/onsenui/js/onsenui.js"></script>
 
     <link rel="stylesheet" href="lib/onsenui/css/onsenui.css" type="text/css" media="all" />
     <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="angular/app.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <style>
-      .page__content {
-        margin: 50px;
-      }
-    </style>
+    <script src="lib/onsenui/js/onsenui.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/onsenui/js/angular-onsenui.js"></script>
+    <script src="angular/app.js"></script>
+  <title>switch</title>
 </head>
-
 <body>
-  <ons-page modifier="material">
-    <ons-toolbar modifier="material">
-      <div class="center">Onsen UI 2.0 Quickstart</div>
-    </ons-toolbar>
-
-    <p>This is a simple app that showcases some of the features of Onsen UI 2.0</p>
-
-    <p>The following app shows some of the new Material Design components that have been added.</p>
-
-    <ons-button onclick="location.href='angular/material.html'" modifier="material--flat">
-      <ons-ripple color="rgba(0, 150, 136, 0.1)"></ons-ripple>
-      Material Design Demo
-    </ons-button>
-
-    <p>Onsen UI 2.0 is, unlike the previous version, not dependant on AngularJS. This means that it can easily be integrated with other frameworks.</p>
-
-    <ons-button onclick="location.href='react/index.html'" modifier="material--flat">
-      <ons-ripple color="rgba(0, 150, 136, 0.1)"></ons-ripple>
-      React.js Demo
-    </ons-button>
-
-    <p>Onsen UI 2.0 also provides iOS-like flat design, just like Onsen UI 1.x.</p>
-
-    <ons-button onclick="location.href='angular/flat.html'" modifier="material--flat">
-      <ons-ripple color="rgba(0, 150, 136, 0.1)"></ons-ripple>
-      Flat Design Demo
-    </ons-button>
-  </ons-page>
+  <!-- menu bar -->
+    <ons-splitter>
+      <ons-splitter-side var="menu" side="left" width="80%" collapse swipeable >
+        <ons-page modifier="material"  style="background-color:white;">
+          <ons-list modifier="material">
+           <ons-list-header modifier="material">Menu</ons-list-header>
+            <ons-list-item modifier="material">
+            This is a menu.
+           </ons-list-item>
+          </ons-list>
+        </ons-page>
+      </ons-splitter-side>
+    <ons-splitter-content page="home.html"></ons-splitter-content>
+  </ons-splitter>
+  <!-- menu bar -->
+  <!-- homeページ -->
+  <ons-template id="home.html">
+    <ons-page modifier="material">
+      <ons-toolbar modifier="material">
+        <div class="left">
+          <ons-toolbar-button ng-click="menu.open()" modifier="material">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          HOME
+        </div>
+        <div class="right">
+        </div>
+      </ons-toolbar>
+      <div class="main-content">
+        <div class="left-content">
+          <div class="content" onclick="location.href'~~~~.html'">
+          </div>
+        </div>
+        <div class="right-content">
+          <div class="content">
+          </div>
+        </div>
+      </div>
+    </ons-page>
+  </ons-template>
+  <!-- homeページ -->
 </body>
 </html>
