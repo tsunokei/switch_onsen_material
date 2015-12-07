@@ -1,13 +1,16 @@
-.list{
-	background-color:rgba(0,249,47,0.001);
+.i-list{
+	margin: 0 auto;
+	width: 100%;
+	padding-top:20px;
 }
 
-.list-inner{
+.i-list-inner{
+	margin:0 auto;
 	background-color: white;
-	/*color: rgba(0,249,47,0.1);*/
 	padding: 20px 0;
-	padding-left: 10px;
-	box-shadow: 0.5px 0.5px 0.2px 0.1px;
+	box-shadow: 1px 1px 1px 1px;
+	width: 80%;
+	margin-bottom: 10px;
 }
 body{
 	margin:0;
@@ -26,8 +29,27 @@ p{
 }
 .main-content{
 	background-color:rgba(0,249,47,0.08);
-	/*position: relative;*/
+	margin: 0 auto;
+	text-align:center;
+	width: 100%;
+	padding-bottom:10px;
+	padding-top: 100px;
 }
 .clearbutton{
-	/*position: absolute;*/
+
+}
+
+.i-list-left{
+
+}
+.account{
+	height:100px;
+	background-color:black;
+	width:100%;
+	position: fixed;
+}
+.account .plus-button{
+	position: absolute;
+	right: 10px;
+	top: 74px;
 }
