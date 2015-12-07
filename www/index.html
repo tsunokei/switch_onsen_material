@@ -38,23 +38,25 @@
   <!-- homeページ -->
   <ons-template id="home.html">
     <ons-page modifier="material">
-      <ons-toolbar modifier="material">
+      <ons-toolbar class="i-toolbar" modifier="material">
         <div class="left">
           <ons-toolbar-button ng-click="menu.open()" modifier="material">
             <ons-icon icon="md-menu"></ons-icon>
-          </ons-toolbar-butston>
+          </ons-toolbar-button>
         </div>
         <div class="center">
           HOME
         </div>
         <div class="right">
         </div>
-      </ons-toolbar>
-         <div class="account"> 
-            <ons-fab class="plus-button">
-              <ons-icon icon="md-plus" size="24px" style="line-height: 56px;"></ons-icon>
-            </ons-fab>
+        <div class="clear"></div>
+        <div class="account"> 
         </div>
+        <ons-fab class="plus-button" onclick="location.href='groupAdd/index.html.'">
+            <ons-icon icon="md-plus" size="24px" style="line-height: 56px;"></ons-icon>
+        </ons-fab>
+      </ons-toolbar>
+
       <div class="main-content">
         <div class="i-list">
           <div class="i-list-inner">
