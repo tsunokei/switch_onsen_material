@@ -8,10 +8,11 @@
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,700,700italic,500italic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="../lib/onsenui/css/onsenui.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="../lib/onsenui/css/onsen-css-components.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="../angular/app.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="stylesheet" href="lib/onsenui/css/onsenui.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="angular/app.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="groupAdd/style.css" type="text/css">
 
     <script src="../lib/onsenui/js/onsenui.js"></script>
     <script src="../lib/angular/angular.js"></script>
@@ -39,15 +40,45 @@
 			    <div class="left">
             		<ons-toolbar-button ng-click="menu.open()" modifier="material">
             			<ons-icon icon="md-menu"></ons-icon>
-          			</ons-toolbar-butston>
-        		</div>
-		        <div class="center">
+          			</ons-toolbar-button>
+        	</div>
+		       <div class="center">
 		          Add  a New Group
-		        </div>
-		        <div class="right">
-		        </div>	
+		      </div>
+		      <div class="right">
+		      </div>	
 			</ons-toolbar>
 
+      <div class="main-content">
+        <div class="form-back">
+          <p style="font-size:22px">
+            グループの名前を入力してください
+          </p>
+          <div class="form">
+            <p>
+            <input type="text" size="40">
+            </p>
+            <ons-button modifier="material" onclick="" class="addbutton">
+            Add
+            </ons-button> 
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="list-back">
+          <ons-list modifier="material">
+            <ons-list-header modifier="material">
+              check the IR's name
+            </ons-list-header>
+            <!-- <ons-list-item modifier="material" class="list" ng-repeat="item in ~~~~~.Item"> -->
+            <ons-list-item modifier="material" class="list">
+              <label class="checkbox checkbox--material">
+                <input type="checkbox" ng-model="item.done" class="checkbox__input checkbox--material__input">
+                <div class="checkbox__checkmark checkbox--material__checkmark"></div>
+              </label>
+            </ons-list-item>
+          </ons-list>
+        </div>
+      </div>
 		</ons-page>
   </ons-template>
 </body>
