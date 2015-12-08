@@ -1,9 +1,13 @@
+/*www/index.htmlのスタイルと共通のスタイルを書いていきます*/
+
 .i-list{
 	margin: 0 auto;
 	width: 100%;
 	/*padding-top:184px;*/
-	padding-top: 224px;
+	/*padding-top: 224px;*/
+	padding-top: 184px;
 	padding-bottom: 40px;
+	background-color:#26A69A;
 }
 
 .i-list-inner{
@@ -18,7 +22,12 @@ body{
 	margin:0;
 	padding:0;
 	height:100%;
-	background-color:rgba(0,249,47,0.08);
+	/*background-color:rgba(0,249,47,0.08);*/
+	background-color:#26A69A;
+	/*background-color:white;*/
+	/*background-color:rgba(0,249,47,0.08);*/
+
+
 }
 
 p{
@@ -31,11 +40,12 @@ p{
 	opacity:0.8;
 }
 .main-content{
-	/*background-color:rgba(0,249,47,0.08);*/
+	background-color:#26A69A;
 	margin: 0 auto;
 	text-align:center;
 	width: 100%;
-	height:470px;
+	height:100%;
+	/*height:100%;*/
 	/*padding-bottom:100px;*/
 	/*padding-top:100px;*/
 }
@@ -63,9 +73,6 @@ p{
 .i-toolbar{
 	padding-top: 10px;
 
-}
-.kotei{
-	/*position: fixed;*/
 }
 .clear{
 	clear:both;

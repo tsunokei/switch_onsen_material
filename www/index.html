@@ -38,7 +38,7 @@
   <!-- homeページ -->
   <ons-template id="home.html">
     <ons-page modifier="material">
-    <!-- <ons-navigator var="mynavigator"> -->
+    <ons-navigator title="Navigator" var="mynavigator">
       <ons-toolbar class="i-toolbar" modifier="material">
         <div class="left">
           <ons-toolbar-button ng-click="menu.open()" modifier="material">
@@ -53,7 +53,7 @@
         <div class="clear"></div>
         <div class="account"> 
         </div>
-        <ons-fab class="plus-button" onclick="location.href='groupAdd/index.html'">
+        <ons-fab class="plus-button" onclick="mynavigator.pushPage('groupAdd/index.html')">
             <ons-icon icon="md-plus" size="24px" style="line-height: 56px;"></ons-icon>
         </ons-fab>
       </ons-toolbar>
@@ -196,7 +196,7 @@
 
         </div>
       </div>
-    <!-- </ons-navigator> -->
+    </ons-navigator>
     </ons-page>
   </ons-template>
   <!-- homeページ -->
