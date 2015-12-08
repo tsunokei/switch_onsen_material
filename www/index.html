@@ -37,12 +37,14 @@
                 console.log(msg)
             },
             error: function(){
-                location.href="singup/index.html"
+                console.log("hoge")
+                // location.href="singup/index.html"
             }
           });
       }
     }else{
-      location.href="api/index.html"
+      location.href="./api/index.html"
+      // console.log("error")
     }
   </script>
 </head>
@@ -228,30 +230,30 @@
   </ons-template>
   <!-- homeページ -->
   <script>
-    $(function(){
-      console.log("hage")
-      $("#submit").on("click" , function(){
-        console.log("hoge")
-        aircon_token="1KiJPrFitLQAv0ZuqDAMmg",
-        window.id=22,
+    // $(function(){
 
-        $.ajax({
-          url: "http://b917fc44.ngrok.io:80/api/v1/ir/send.json",
-          type: "POST",
-          data: {
-            "auth_token": aircon_token,
-            "ir_id": id
-          },
-          success:function(msg){
-            alert("success");
-            console.log("kiteru");
-          },
-          error:function(){
-            alert("error");
-          }
-        });
-      })
-    });
+    //   $("#submit").on("click" , function(){
+    //     console.log("hoge")
+    //     aircon_token="1KiJPrFitLQAv0ZuqDAMmg",
+    //     window.id=22,
+
+    //     $.ajax({
+    //       url: "http://b917fc44.ngrok.io:80/api/v1/ir/send.json",
+    //       type: "POST",
+    //       data: {
+    //         "auth_token": aircon_token,
+    //         "ir_id": id
+    //       },
+    //       success:function(msg){
+    //         alert("success");
+    //         console.log("kiteru");
+    //       },
+    //       error:function(){
+    //         alert("error");
+    //       }
+    //     });
+    //   })
+    // });
   </script>
 </body>
 </html>

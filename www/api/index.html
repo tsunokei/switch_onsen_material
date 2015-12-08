@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang = "en" ng-app="app">
+  <head>
+   <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,700,700italic,500italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="../lib/onsenui/css/onsenui.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="../lib/onsenui/css/onsen-css-components.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="../angular/app.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <script src="../lib/onsenui/js/onsenui.js"></script>
+    <script src="../lib/angular/angular.js"></script>
+    <script src="../lib/onsenui/js/angular-onsenui.js"></script>
+    <script src="../angular/app.js"></script>	
+    <script src="../jquery-2.1.4.min.js"></script>
+    <script>
+    </script>
+  </head>
+  <body>
+    <div class="content">
+        <img src="https://robohash.org/my-own-slug.png?size=300x300">
+        <h1>404 Not Found.</h1>
+        <p>APIサーバーが見つけられませんでした。<br>正しいサイト名を入力し直して下さい。</p>
+        <div id="error_messages"></div>
+        <input id="url" placeholder="http://example.com" size="40">
+
+        <ons-button modifier="material"class="submit-button" id="submit">
+        	送信
+        </ons-button>
+        <div class="blank"></div>
+
+      </div>
+    </div>
+    <script>
+      $("#submit").on("click",function(){
+      	console.log("hoge")
+        site_url = $("#url").val()
+        $.ajax({
+          url: "" + site_url + "/api/v1/auth/token.json",
+          type:"GET",
+          success: function(msg){
+            localStorage.setItem("switch-site_url", "" + site_url)
+            localStorage.setItem("switch-auth_token",msg["response"]["auth_token"]);
+            location.href = "../signup/index.html"
+          },
+          error: function(error){
+            if(error.status == 404){
+              localStorage.setItem("switch-site_url","")
+              $("#error_messages").html("<ul><li class='error'>URLが誤っています</li></ul>");
+            }else{
+              text = "<ul>";
+              messages = error.responseJSON.meta.errors.forEach(function(err){
+                text += "<li class='error'>" + err.message + "</li>";
+              });
+              text += "</ul>"
+              $("#error_messages").html(text);
+            }
+          }
+        });
+      })
+    </script>
+  </body>
+</html>

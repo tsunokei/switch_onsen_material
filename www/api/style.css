@@ -1,0 +1,19 @@
+.content{
+	text-align:center;
+	margin-top:100px;
+}
+.content img{
+	width:180px;
+}
+.content p{
+
+	font-size: 13px;
+	margin-bottom: 30px;
+}
+.content input{
+	/*font-size: 14px;*/
+	padding: 10px 0;
+}
+.content .submit-button{
+	/*margin-right:-10px;*/
+}
