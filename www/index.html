@@ -17,6 +17,7 @@
     <script src="lib/angular/angular.js"></script>
     <script src="lib/onsenui/js/angular-onsenui.js"></script>
     <script src="angular/app.js"></script>
+    <script src="jquery-2.1.4.min.js"></script>
   <title>switch</title>
 </head>
 <body>
@@ -27,7 +28,7 @@
           <ons-list modifier="material">
            <ons-list-header modifier="material">Menu</ons-list-header>
             <ons-list-item modifier="material">
-            This is a menu.
+            <p id="">This is a menu.</p>
            </ons-list-item>
           </ons-list>
         </ons-page>
@@ -38,7 +39,7 @@
   <!-- homeページ -->
   <ons-template id="home.html">
     <ons-page modifier="material">
-    <ons-navigator title="Navigator" var="mynavigator">
+    <ons-navigator var="mynavigator">
       <ons-toolbar class="i-toolbar" modifier="material">
         <div class="left">
           <ons-toolbar-button ng-click="menu.open()" modifier="material">
@@ -53,6 +54,7 @@
         <div class="clear"></div>
         <div class="account"> 
         </div>
+    
         <ons-fab class="plus-button" onclick="mynavigator.pushPage('groupAdd/index.html')">
             <ons-icon icon="md-plus" size="24px" style="line-height: 56px;"></ons-icon>
         </ons-fab>
@@ -60,7 +62,7 @@
 
       <div class="main-content">
         <div class="i-list">
-          <div class="i-list-inner">
+          <div class="i-list-inner" id ="submit">
             <div class="i-list-left">
               kiteru
               <div class="icon">
@@ -190,15 +192,40 @@
             <div class="irname">
             </div>
           </div>
-
-
-
-
+                  <p id="">
+        えあこん
+        </p>
         </div>
       </div>
     </ons-navigator>
     </ons-page>
   </ons-template>
   <!-- homeページ -->
+  <script>
+    $(function(){
+      console.log("hage")
+      $("#submit").on("click" , function(){
+        console.log("hoge")
+        aircon_token="1KiJPrFitLQAv0ZuqDAMmg",
+        window.id=22,
+
+        $.ajax({
+          url: "http://b917fc44.ngrok.io:80/api/v1/ir/send.json",
+          type: "POST",
+          data: {
+            "auth_token": aircon_token,
+            "ir_id": id
+          },
+          success:function(msg){
+            alert("success");
+            console.log("kiteru");
+          },
+          error:function(){
+            alert("error");
+          }
+        });
+      })
+    });
+  </script>
 </body>
 </html>
