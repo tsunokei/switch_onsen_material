@@ -1,0 +1,29 @@
+.form-back{
+	padding-top:30px; 
+	text-align:center;
+	margin-left:0px;
+}
+.form{
+	margin-top:20px; 
+	margin-left:20px;
+}
+
+.form p{
+	float: left;
+	padding-top: 5px; 
+	margin-left:0px;
+}
+
+.form input{
+	height: 20px;
+}
+
+.addbutton{
+	float: left; 
+	margin-left: 20px;
+	padding-top:-5px; 
+	font-size:14px; 
+}
+.list-back{
+	padding-top:20px;
+}
