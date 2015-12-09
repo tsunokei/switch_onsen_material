@@ -18,11 +18,17 @@
 	height: 20px;
 }
 
-.addbutton{
+.addbutton.{
 	float: left; 
 	margin-left: 20px;
 	padding-top:-5px; 
 	font-size:14px; 
+}
+.addbutton.allinfrad{
+	text-align:right;
+	margin-top:-10px;
+	margin-right: 10px;
+	margin-bottom: 20px;
 }
 .list-back{
 	padding-top:20px;
