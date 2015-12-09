@@ -22,12 +22,14 @@
       //   title: 'Play tennis',
       //   done: true,
       // }
+      //　group -> グループ
+      //  mame- -> irの名前
     ];
    
 
-    this.newTodo = function() {//itemリストに追加するよ
+    this.newTodo = function() {//itemsリストに追加するよ
       this.items.push({
-        title: '',
+        title: '',//名前は空っぽ
         done: false
       });
     }.bind(this);
