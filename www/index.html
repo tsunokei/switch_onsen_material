@@ -16,7 +16,36 @@
     <script src="angular/app.js"></script>
     <script src="jquery-2.1.4.min.js"></script>
     <title>switch</title>
-    <script></script>
+    <script>
+    console.log("hoge")
+       if(localStorage.getItem('switch-site_url')){
+      if(!localStorage.getItem('switch-auth_token')){
+          location.href="login/index.html"
+
+      }else{
+          site_url= localStorage.getItem('switch-site_url')
+          auth_token=localStorage.getItem('switch-auth_token')
+          $.ajax({
+            url: site_url + "/api/v1/user/info.json",
+            type: "GET",
+            data: {
+              "auth_token": auth_token,
+            },
+            success: function(msg){
+                console.log("hoge")
+                console.log(msg)
+            },
+            error: function(){
+                location.href="singup/index.html"
+                // console.log("hoge")
+            }
+          });
+      }
+    }else{
+      location.href="api/index.html"
+      // console.log("hoge")
+    }
+</script>
   </head>
   <body>
     <!-- menu bar -->
