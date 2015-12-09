@@ -25,7 +25,7 @@
       <ons-page modifier="material"  style="background-color:white;">
         <ons-list modifier="material">
           <ons-list-header modifier="material">Menu</ons-list-header>
-          <ons-list-item modifier="material">
+          <ons-list-item modifier="material" id ="submit">
             This is a menu.
           </ons-list-item>
         </ons-list>
@@ -47,7 +47,7 @@
 
       <ons-list modifier="material">
         <ons-list-header modifier="material" style="text-align: center;">Things to do</ons-list-header>
-        <ons-list-item modifier="material" ng-repeat="item in todo.items" class="list">
+        <ons-list-item modifier="material" ng-repeat="item in todo.items" class="list"><!--todoコントローラーのitemsをとってくるよ-->
           <div class="list-inner">
           <label class="checkbox checkbox--material">
             <input type="checkbox" ng-model="item.done" class="checkbox__input checkbox--material__input">

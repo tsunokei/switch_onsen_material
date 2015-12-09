@@ -1,11 +1,11 @@
 (function() {
   angular.module('app', ['onsen'])
-  .controller('TodoController', function($scope, $timeout) {
-    this.items = [
-      // {
-      //   title: 'Water the plants',
-      //   done: false,
-      // },
+  .controller('SwitchController', function($scope, $timeout) {
+    window.items = [
+      {
+        title: 'Water the plants',
+        done: false,
+      },
       // {
       //   title: 'Walk the dog',
       //   done: true,
@@ -22,12 +22,14 @@
       //   title: 'Play tennis',
       //   done: true,
       // }
+      //　名前
     ];
+    console.log(items)
    
 
-    this.newTodo = function() {//itemリストに追加するよ
+    this.newTodo = function() {//itemsリストに追加するよ
       this.items.push({
-        title: '',
+        title: '',//名前は空っぽ
         done: false
       });
     }.bind(this);
@@ -45,6 +47,12 @@
         return !item.done;
       });
     }.bind(this);
+
+    this.pushToGroupAdd = function(){
+      console.log("orette tensai");
+      mynavigator.pushPage('groupAdd/index.html');
+      console.log("ajaxしたい")
+    }
 
     this.selectedItem = -1;
   });
