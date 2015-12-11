@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,700,700italic,500italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="lib/onsenui/css/onsenui.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="angular/app.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="lib/onsenui/js/onsenui.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/onsenui/js/angular-onsenui.js"></script>
+    <script src="angular/app.js"></script>
+    <script src="jquery-2.1.4.min.js"></script>
+    <title>getInfradInfo</title>
+  </head>
+  <body>
+    <!-- menu bar -->
+<!--     <ons-sliding-menu main-page="getInfradInfo.html" menu-page="menu.html" side="left" max-slide-distance="250px" var="menu" >
+    </ons-sliding-menu>
+    <ons-template id="menu.html">
+      <ons-page modifier="material"  style="background-color:lemonchiffon;">
+        <ons-list modifier="material">
+          <ons-list-header modifier="material" style="background-color:wheat;">Menu</ons-list-header>
+          <ons-list-item modifier="chevron" onclick="menu.setMainPage('home.html', {closeMenu: true})" style="background-color:lemonchiffon;">
+            home.html
+            <ons-icon icon="ion-home"></ons-icon>
+          </ons-list-item>
+          <ons-list-item modifier="chevron" onclick="menu.setMainPage('groupAdd/index.html', {closeMenu: true})" style="background-color:lemonchiffon;">
+            groupAdd.html
+          </ons-list-item>
+          <ons-list-item modifier="chevron" onclick="menu.setMainPage('newsche/index.html', {closeMenu: true})" style="background-color:lemonchiffon;">
+            newsche.html
+          </ons-list-item>
+          <ons-list-item modifier="chevron" onclick="menu.setMainPage('newir/index.html', {closeMenu: true})" style="background-color:lemonchiffon;" id="submit">
+            newir.html
+          </ons-list-item>
+          <ons-list-item modifier="chevron" onclick="menu.setMainPage('setting/index.html', {closeMenu: true})" style="background-color:lemonchiffon;">
+            setting.html
+          </ons-list-item>
+        </ons-list>
+      </ons-page>
+    </ons-template>
+     -->
+    <!-- <ons-template id="getInfradInfo.html" > -->
+      <ons-page modifier="material" ng-controller="SwitchController as switch">
+        <ons-navigator var="mynavigator">
+          <ons-toolbar class="i-toolbar" modifier="material">
+            <div class="left">
+              <ons-toolbar-button ng-click="menu.open()" modifier="material">
+                <ons-icon icon="md-menu"></ons-icon>
+              </ons-toolbar-button>
+            </div>
+            <div class="center" id="submit">
+              getInfradInfo
+            </div>
+            <div class="right">
+            </div>
+            <div class="clear"></div>
+          </ons-toolbar>
+
+          <div class="main-content">
+          <br>
+<!--             <ons-button modifier="material" ng-click="switch.getInfradInfo();" class="addbutton" id="add">
+              Add
+            </ons-button> -->
+            <br>
+
+<!--             <div class="i-list home">
+              <div class="i-list-inner">
+                <div class="i-list-left" id="ir">
+                  kiteru
+                  <div class="icon">
+                    <img src="">
+                  </div>
+                </div>
+                <div class="irname">
+                </div>
+              </div>
+            </div> -->
+
+
+<!--           <div ng-controller = "infrad">
+            <p>{{info}}</p>
+          </div> -->
+          <ons-list　modifier="material" ng-init="switch.getInfradInfo();">
+
+            <ons-list-item id="{{item.id}}" modifier="tappable" ng-repeat="item in infrad" style="background-color:white" ng-click="switch.send();">
+            {{item.name}}
+          </ons-list-item>
+        </ons-list>
+        </ons-navigator>
+      </ons-page>
+    </ons-template>
+    <!-- homeページ -->
