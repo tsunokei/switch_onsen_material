@@ -46,7 +46,7 @@
         </ons-page>
       </ons-template>
   <ons-template id ="addindex.html">
-		<ons-page modifier="material">
+		<ons-page modifier="material" ng-controller="SwitchController as switch">
 
 			<ons-toolbar modifier="material">
 			    <div class="left">
@@ -55,40 +55,59 @@
           			</ons-toolbar-button>
         	</div>
 		       <div class="center">
-		          Add  a New Group
+		          New
 		      </div>
 		      <div class="right">
 		      </div>	
 			</ons-toolbar>
 
       <div class="main-content">
-        <div class="form-back">
-          <p style="font-size:22px">
-            グループの名前を入力してください
-          </p>
-          <div class="form">
-            <p>
-            <input type="text" size="40">
-            </p>
-            <ons-button modifier="material" onclick="" class="addbutton" id="add">
-            Add
-            </ons-button> 
-            <div class="clear"></div>
+        <div class="add_new_ir">
+          <div class="subject">
+            <p>new IR</p>
+          </div>
+          <div class="inner">
+            <p>登録する赤外線機器を準備してtryボタンを押してください</p>
+          </div>
+          <div class="try_button">
+            <ons-button modifier="material" style="padding-right:150px;padding-left:150px; margin:0 auto;"ng-click="switch.pushToNewIR();">
+            try
+            </ons-button>
           </div>
         </div>
-        <div class="list-back">
-          <ons-list modifier="material">
-            <ons-list-header modifier="material">
-              check the IR's name
-            </ons-list-header>
-            <!-- <ons-list-item modifier="material" class="list" ng-repeat="item in ~~~~~.Item"> -->
-            <ons-list-item modifier="material" class="list">
-              <label class="checkbox checkbox--material">
-                <input type="checkbox" ng-model="item.done" class="checkbox__input checkbox--material__input">
-                <div class="checkbox__checkmark checkbox--material__checkmark"></div>
-              </label>
-            </ons-list-item>
-          </ons-list>
+        <div class="add_new_group">
+          <div class="subject">
+            <p>new Group</p>
+          </div>
+          <div class="inner group">
+            <p>名前を入力してください</p>
+          </div>
+          <div class="form-back">
+            
+            <div class="form">
+              <p>
+              <input type="text" size="40">
+              </p>
+              <ons-button modifier="material" onclick="" class="addbutton" id="add">
+              Add
+              </ons-button> 
+              <div class="clear"></div>
+            </div>
+          </div>
+          <div class="list-back">
+            <ons-list modifier="material">
+              <ons-list-header modifier="material" class="check_head">
+                check the IR's name
+              </ons-list-header>
+              <!-- <ons-list-item modifier="material" class="list" ng-repeat="item in ~~~~~.Item"> -->
+              <ons-list-item modifier="material" class="list">
+                <label class="checkbox checkbox--material">
+                  <input type="checkbox" ng-model="item.done" class="checkbox__input checkbox--material__input">
+                  <div class="checkbox__checkmark checkbox--material__checkmark"></div>
+                </label>
+              </ons-list-item>
+            </ons-list>
+          </div>
         </div>
       </div>
 		</ons-page>

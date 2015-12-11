@@ -53,6 +53,10 @@
       mynavigator.pushPage('groupAdd/index.html');
       console.log("ajaxしたい")
     }
+    this.pushToNewIR = function(){
+      mynavigator.pushPage('newir/index.html')
+      console.log("kiteru")
+    }
 
     this.selectedItem = -1;
   });
