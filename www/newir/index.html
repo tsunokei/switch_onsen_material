@@ -24,6 +24,10 @@
     <title>new ir</title>
   </head>
   <body>
+
+
+    <ons-page modifier="material" ng-controller="SwitchController as switch">
+    <ons-navigator>
     <div class="main-content">
       <div class="msg">
         <p><strong>受信状態です照射してください</strong></p>
@@ -44,7 +48,7 @@
             </ons-button>
           </div>
           <div class="again-button">
-            <ons-button modifier="material"ng-click="" style="margin 0;">
+            <ons-button modifier="material"ng-click="switch.pushToResister();" style="margin 0;">
               done
             </ons-button>
           </div>
@@ -52,6 +56,8 @@
           <div class="clear"></div>
           </div>
     </div>
+    </ons-navigator>
+    </ons-page>
     <script>
       console.log("直接書き込めるやん ")
     </script>

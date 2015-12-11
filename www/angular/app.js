@@ -158,6 +158,15 @@
       })
     }
 
+    this.pushToResister = function(){
+      mynavigator.pushPage('register/index.html');
+    }
+
+    this.pushToHome = function(){
+      console.log("kiteru")
+      location.href="index.html"
+
+    }
 
     // $(function(){
     //   console.log("hage")

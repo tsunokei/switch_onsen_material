@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang = "ja">
+  <head>
+   <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,700,700italic,500italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="lib/onsenui/css/onsenui.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="angular/app.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="register/style.css" type="text/css">
+
+    <script src="lib/onsenui/js/onsenui.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/onsenui/js/angular-onsenui.js"></script>
+    <script src="angular/app.js"></script> 
+    <script src="jquery-2.1.4.min.js"></script>
+    <title>new ir</title>
+  </head>
+  <body>
+
+
+    <ons-page ng-controller="SwitchController as switch" modifier="material">
+    <ons-navigator>
+      <ons-toolbar modifier="material">
+          <div class="left">
+                <ons-toolbar-button ng-click="menu.open()" modifier="material">
+                  <ons-icon icon="md-menu"></ons-icon>
+                </ons-toolbar-button>
+          </div>
+           <div class="center">
+              登録
+          </div>
+          <div class="right">
+          </div>  
+      </ons-toolbar>
+
+    <div class="main-content">
+      <div style="height:100px"></div>
+      <div class="success-msg">
+        <h3>受信成功です！<br>名前をつけてください！</h3>
+      </div>
+
+      <div style="height:60px"></div>
+      <div class="name-form">
+        <input modifier="material" type="text" size="40">
+        <ons-button modifier="material" ng-click="switch.pushToHome();">
+          done
+        </ons-button>
+      </div>
+
+    </ons-navigator>
+    </ons-page>
+  </body>
+</html>
