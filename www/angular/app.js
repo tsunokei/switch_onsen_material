@@ -25,7 +25,7 @@
       //　名前
     ];
     console.log(items)
-   
+
 
     this.newTodo = function() {//itemsリストに追加するよ
       this.items.push({
@@ -53,10 +53,7 @@
       mynavigator.pushPage('groupAdd/index.html');
       console.log("ajaxしたい")
     }
-    this.pushToNewIR = function(){
-      mynavigator.pushPage('newir/index.html')
-      console.log("kiteru")
-    }
+
     this.getInfradInfo = function(){
           console.log("eeyan")
             $.ajax({
@@ -66,18 +63,13 @@
                     "auth_token": localStorage.getItem("switch-auth_token")
                 },
                 success: function(msg){
-                  // console.log(msg)
+                  console.log(msg)
                   window.hoge=msg
                   window.hoge2=msg["response"]["infrareds"]
-                  window.obj = JSON.stringify(hoge2);
+                  var obj = JSON.stringify(hoge2);
                   localStorage.setItem("l_obj",obj);
-                  // hoge["response"]["infrareds"].forEach(this.getinfo=function(obj){
-                  //   // console.log(item)
-                  //   this.indexInfo2=obj
-                  // console.log(indexInfo2)
-                  // })
 
-                  // console.log(hoge2)
+                  console.log(hoge2)
 
                 },
                 error: function(){
@@ -85,30 +77,65 @@
                 }
             });
 
-            obj = localStorage.getItem("l_obj");
-            hoge2 = JSON.parse(obj);
-
-            // document.write(hoge2)
-            // console.log(obj)
+            var obj = localStorage.getItem("l_obj");
+            var hoge2 = JSON.parse(obj);
             console.log(hoge2)
-          // var e = document.getElementById('ir');
-          // e.textContent = hoge2;
 
-            // var infrad  = function($scope) {
-              $scope.infrad = hoge2;
-            // }
-
-            // var infrad = function($scope){
-            //   $scope.info = [hoge2];
-            // }
-
-    // });
+            $scope.infrad = hoge2;
 
     }
 
-    this.send = function(){
-      console.log($(this).get(0))
-    }.bind(this)
+    this.send = function(item_id){
+      // console.log("hage")
+      // $("#submit").on("click" , function(){
+        console.log(item_id)
+        // aircon_token="1KiJPrFitLQAv0ZuqDAMmg",
+        // aircon_token="aC_ZBshcAXi1kVJdpLQ2lw",
+        window.id=item_id,
+
+        $.ajax({
+          url: ""+localStorage.getItem("switch-site_url") +":80"+ "/api/v1/ir/send.json",
+          type: "POST",
+          data: {
+            "auth_token": localStorage.getItem("switch-auth_token"),
+            "ir_id": id
+          },
+          success:function(msg){
+            console.log("kiteru");
+          },
+          error:function(){
+            alert("error");
+          }
+        // });
+      })
+    }
+
+    // $(function(){
+    //   console.log("hage")
+    //   $("#submit").on("click" , function(){
+    //     console.log("hoge")
+    //     // aircon_token="1KiJPrFitLQAv0ZuqDAMmg",
+    //     aircon_token="aC_ZBshcAXi1kVJdpLQ2lw",
+    //     window.id=22,
+
+    //     $.ajax({
+    //       url: ""+localStorage.getItem("switch-site_url")+"/api/v1/ir.json",
+    //       type: "POST",
+    //       data: {
+    //         "auth_token": aircon_token,
+    //         "ir_id": id
+    //       },
+    //       success:function(msg){
+    //         alert("success");
+    //         console.log("kiteru");
+    //       },
+    //       error:function(){
+    //         alert("error");
+    //       }
+    //     });
+    //   })
+    // });
+
     this.selectedItem = -1;
   });
 })();

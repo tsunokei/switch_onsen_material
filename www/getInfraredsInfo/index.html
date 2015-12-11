@@ -19,33 +19,7 @@
   </head>
   <body>
     <!-- menu bar -->
-<!--     <ons-sliding-menu main-page="getInfradInfo.html" menu-page="menu.html" side="left" max-slide-distance="250px" var="menu" >
-    </ons-sliding-menu>
-    <ons-template id="menu.html">
-      <ons-page modifier="material"  style="background-color:lemonchiffon;">
-        <ons-list modifier="material">
-          <ons-list-header modifier="material" style="background-color:wheat;">Menu</ons-list-header>
-          <ons-list-item modifier="chevron" onclick="menu.setMainPage('home.html', {closeMenu: true})" style="background-color:lemonchiffon;">
-            home.html
-            <ons-icon icon="ion-home"></ons-icon>
-          </ons-list-item>
-          <ons-list-item modifier="chevron" onclick="menu.setMainPage('groupAdd/index.html', {closeMenu: true})" style="background-color:lemonchiffon;">
-            groupAdd.html
-          </ons-list-item>
-          <ons-list-item modifier="chevron" onclick="menu.setMainPage('newsche/index.html', {closeMenu: true})" style="background-color:lemonchiffon;">
-            newsche.html
-          </ons-list-item>
-          <ons-list-item modifier="chevron" onclick="menu.setMainPage('newir/index.html', {closeMenu: true})" style="background-color:lemonchiffon;" id="submit">
-            newir.html
-          </ons-list-item>
-          <ons-list-item modifier="chevron" onclick="menu.setMainPage('setting/index.html', {closeMenu: true})" style="background-color:lemonchiffon;">
-            setting.html
-          </ons-list-item>
-        </ons-list>
-      </ons-page>
-    </ons-template>
-     -->
-    <!-- <ons-template id="getInfradInfo.html" > -->
+
       <ons-page modifier="material" ng-controller="SwitchController as switch">
         <ons-navigator var="mynavigator">
           <ons-toolbar class="i-toolbar" modifier="material">
@@ -88,8 +62,9 @@
           </div> -->
           <ons-list　modifier="material" ng-init="switch.getInfradInfo();">
 
-            <ons-list-item id="{{item.id}}" modifier="tappable" ng-repeat="item in infrad" style="background-color:white" ng-click="switch.send();">
+            <ons-list-item id="{{item.id}}" modifier="tappable" ng-repeat="item in infrad" style="background-color:white" ng-click="switch.send(item.id);">
             {{item.name}}
+            <!-- <p id="submit">ON</p> -->
           </ons-list-item>
         </ons-list>
         </ons-navigator>
