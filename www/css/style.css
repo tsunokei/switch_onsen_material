@@ -1,6 +1,6 @@
 /*www/index.htmlのスタイルと共通のスタイルを書いていきます*/
 
-.i-list{
+.i-list.home{
 	margin: 0 auto;
 	width: 100%;
 	/*padding-top:184px;*/
@@ -9,7 +9,15 @@
 	padding-bottom: 40px;
 	background-color:#C8E6C9;
 }
-
+.i-list{
+	margin: 0 auto;
+	width: 100%;
+	/*padding-top:184px;*/
+	/*padding-top: 224px;*/
+	/*padding-top: 184px;*/
+	padding-bottom: 40px;
+	background-color:#C8E6C9;
+}
 .i-list-inner{
 	margin:0 auto;
 	background-color: white;
@@ -64,6 +72,14 @@ p{
 	left: 0px;
 	box-shadow: 1px 1px 1px 1px;
 }
+/*.username{
+	color:white;
+	opacity:0.8;
+	font-size:14px;
+	position:absolute;
+	top:85px;
+	left: 80px;
+}*/
 .plus-button{
 	position: absolute;
 	right: 10px;
@@ -76,3 +92,41 @@ p{
 .clear{
 	clear:both;
 }
+.user_content{
+	padding-top:30px;
+	color:white;
+	margin:0 auto;
+	width:100%;
+}
+.user_name{
+	float: left;
+	width: 180px;
+	margin-left: 50px;
+}
+.user_icon{
+	float:left;
+	width:50px;
+	margin-left: 30px;
+}
+.room_content{
+	padding-top:30px;
+	color: white;
+	margin: 0 auto;
+	width: 100%;
+}
+.room_ondo{
+	float:left;
+	width: 50px;
+	margin-left: 40px;
+}
+.room_icon{
+	float:left;
+	width: 50px;
+	margin-left:30px;
+}
+.room_bright{
+	float:left;
+	width: 50px;
+	margin-left:30px;
+}
+

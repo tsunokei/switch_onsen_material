@@ -1,17 +1,46 @@
+.add_new_ir{
+	/*text-align:left;*/
+	/*margin-left:20px;*/
+	padding-top:20px;
+	text-align:left;
+}
+.subject{
+	color:white;
+	/*font-weight:bold;*/
+	text-align:left;
+	margin-left:20px;
+	padding-bottom:8px;
+}
+.inner{
+	font-size:12px;
+	padding-bottom:16px;
+	margin-left:28px;
+}
+.inner.group{
+	padding-bottom:8px;
+}
+.try_button{
+	text-align:center;
+}
+.add_new_group{
+	padding-top:20px;
+	text-align:left;
+}
+
 .form-back{
-	padding-top:30px; 
+	/*padding-top:30px; */
 	text-align:center;
 	margin-left:0px;
 }
 .form{
-	margin-top:20px; 
+	/*margin-top:20px; */
 	margin-left:20px;
 }
 
 .form p{
 	float: left;
 	padding-top: 5px; 
-	margin-left:0px;
+	margin-left:5px;
 }
 
 .form input{
@@ -20,10 +49,16 @@
 
 .addbutton{
 	float: left; 
-	margin-left: 20px;
+	margin-left: 15px;
 	padding-top:-5px; 
 	font-size:14px; 
 }
+
 .list-back{
 	padding-top:20px;
+	width:86%;
+	margin:0 auto;
+}
+.check_head{
+	height:30px;
 }

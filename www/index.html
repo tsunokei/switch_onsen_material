@@ -1,231 +1,312 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,700,700italic,500italic' rel='stylesheet' type='text/css'>
-
-
     <link rel="stylesheet" href="lib/onsenui/css/onsenui.css" type="text/css" media="all" />
     <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css" type="text/css" media="all" />
     <link rel="stylesheet" href="angular/app.css" type="text/css" media="all" />
     <link rel="stylesheet" href="css/style.css" type="text/css">
-
     <script src="lib/onsenui/js/onsenui.js"></script>
     <script src="lib/angular/angular.js"></script>
     <script src="lib/onsenui/js/angular-onsenui.js"></script>
     <script src="angular/app.js"></script>
     <script src="jquery-2.1.4.min.js"></script>
-  <title>switch</title>
-</head>
-<body>
-  <!-- menu bar -->
-    <ons-splitter>
-      <ons-splitter-side var="menu" side="left" width="80%" collapse swipeable >
-        <ons-page modifier="material"  style="background-color:white;">
-          <ons-list modifier="material">
-           <ons-list-header modifier="material">Menu</ons-list-header>
-            <ons-list-item modifier="material">
-            <p id="submit">This is a menu.</p>
-           </ons-list-item>
-          </ons-list>
-        </ons-page>
-      </ons-splitter-side>
-    <ons-splitter-content page="home.html"></ons-splitter-content>
-  </ons-splitter>
-  <!-- menu bar -->
-  <!-- homeページ -->
-  <ons-template id="home.html">
-    <ons-page modifier="material">
-    <ons-navigator var="mynavigator">
-      <ons-toolbar class="i-toolbar" modifier="material">
-        <div class="left">
-          <ons-toolbar-button ng-click="menu.open()" modifier="material">
-            <ons-icon icon="md-menu"></ons-icon>
-          </ons-toolbar-button>
-        </div>
-        <div class="center">
-          HOME
-        </div>
-        <div class="right">
-        </div>
-        <div class="clear"></div>
-        <div class="account">
-        </div>
-
-        <ons-fab class="plus-button" onclick="mynavigator.pushPage('groupAdd/index.html')">
-            <ons-icon icon="md-plus" size="24px" style="line-height: 56px;"></ons-icon>
-        </ons-fab>
-      </ons-toolbar>
-
-      <div class="main-content">
-        <div class="i-list">
-          <div class="i-list-inner" id ="submit">
-            <div class="i-list-left">
-              kiteru
-              <div class="icon">
-                <img src="">
-              </div>
-            </div>
-            <div class="irname">
-            </div>
-          </div>
-          <div class="i-list-inner">
-            <div class="i-list-left">
-              kiteru
-              <div class="icon">
-                <img src="">
-              </div>
-            </div>
-            <div class="irname">
-            </div>
-          </div>
-          <div class="i-list-inner">
-            <div class="i-list-left">
-              kiteru
-              <div class="icon">
-                <img src="">
-              </div>
-            </div>
-            <div class="irname">
-            </div>
-          </div>
-          <div class="i-list-inner">
-            <div class="i-list-left">
-              kiteru
-              <div class="icon">
-                <img src="">
-              </div>
-            </div>
-            <div class="irname">
-            </div>
-          </div>
-          <div class="i-list-inner">
-            <div class="i-list-left">
-              kiteru
-              <div class="icon">
-                <img src="">
-              </div>
-            </div>
-            <div class="irname">
-            </div>
-          </div>
-          <div class="i-list-inner">
-            <div class="i-list-left">
-              kiteru
-              <div class="icon">
-                <img src="">
-              </div>
-            </div>
-            <div class="irname">
-            </div>
-          </div>
-          <div class="i-list-inner">
-            <div class="i-list-left">
-              kiteru
-              <div class="icon">
-                <img src="">
-              </div>
-            </div>
-            <div class="irname">
-            </div>
-          </div>
-          <div class="i-list-inner">
-            <div class="i-list-left">
-              kiteru
-              <div class="icon">
-                <img src="">
-              </div>
-            </div>
-            <div class="irname">
-            </div>
-          </div>
-          <div class="i-list-inner">
-            <div class="i-list-left">
-              kiteru
-              <div class="icon">
-                <img src="">
-              </div>
-            </div>
-            <div class="irname">
-            </div>
-          </div>
-          <div class="i-list-inner">
-            <div class="i-list-left">
-              kiteru
-              <div class="icon">
-                <img src="">
-              </div>
-            </div>
-            <div class="irname">
-            </div>
-          </div>
-          <div class="i-list-inner">
-            <div class="i-list-left">
-              kiteru
-              <div class="icon">
-                <img src="">
-              </div>
-            </div>
-            <div class="irname">
-            </div>
-          </div>
-          <div class="i-list-inner">
-            <div class="i-list-left">
-              kiteru
-              <div class="icon">
-                <img src="">
-              </div>
-            </div>
-            <div class="irname">
-            </div>
-          </div>
-          <div class="i-list-inner">
-            <div class="i-list-left">
-              kiteru
-              <div class="icon">
-                <img src="">
-              </div>
-            </div>
-            <div class="irname">
-            </div>
-          </div>
-                  <p id="">
-        えあこん
-        </p>
-        </div>
-      </div>
-    </ons-navigator>
-    </ons-page>
-  </ons-template>
-  <!-- homeページ -->
-  <script>
-    $(function(){
-      console.log("hage")
-      $("#submit").on("click" , function(){
+    <title>switch</title>
+    <script>
+      if(localStorage.getItem('switch-site_url')){
+        if(!localStorage.getItem('switch-auth_token')){
+            location.href="login/index.html"
+        }else{
+          site_url= localStorage.getItem('switch-site_url')
+          auth_token=localStorage.getItem('switch-auth_token')
+          $.ajax({
+            url: site_url + "/api/v1/user/info.json",
+            type: "GET",
+            data: {
+              "auth_token": auth_token,
+            },
+            success: function(msg){
+                console.log(msg)
+            },
+            error: function(msg){
+              console.log(msg)
+              if(msg.status = 404){
+                location.href="api/index.html"
+              }else{
+                location.href="signup/index.html"
+              }
+            }
+          });
+        }
+      }else{
+        location.href="api/index.html"
         console.log("hoge")
-        aircon_token="1KiJPrFitLQAv0ZuqDAMmg",
-        window.id=22,
+      }
+    </script>
+  </head>
+  <body>
+    <!-- menu bar -->
+    <ons-sliding-menu main-page="home.html" menu-page="menu.html" side="left" max-slide-distance="250px" var="menu" >
+    </ons-sliding-menu>
+    <ons-template id="menu.html">
+      <ons-page modifier="material"  style="background-color:lemonchiffon;">
+        <ons-list modifier="material">
+          <ons-list-header modifier="material" style="background-color:wheat;">Menu</ons-list-header>
+          <ons-list-item modifier="chevron" onclick="menu.setMainPage('home.html', {closeMenu: true})" style="background-color:lemonchiffon;">
+            home.html
+            <ons-icon icon="ion-home"></ons-icon>
+          </ons-list-item>
+          <ons-list-item odifier="chevron" onclick="menu.setMainPage('groupAdd/index.html', {closeMenu: true})" style="background-color:lemonchiffon;">
+            groupAdd.html
+          </ons-list-item>
+          <ons-list-item modifier="chevron" onclick="menu.setMainPage('newsche/index.html', {closeMenu: true})" style="background-color:lemonchiffon;">
+            newsche.html
+          </ons-list-item>
+          <ons-list-item modifier="chevron" onclick="menu.setMainPage('newir/index.html', {closeMenu: true})" style="background-color:lemonchiffon;" id="submit">
+            newir.html
+          </ons-list-item>
+          <ons-list-item modifier="chevron" onclick="menu.setMainPage('setting/index.html', {closeMenu: true})" style="background-color:lemonchiffon;">
+            setting.html
+          </ons-list-item>
+          <ons-list-item modifier="chevron" onclick="menu.setMainPage('getInfraredsInfo/index.html', {closeMenu: true})" style="background-color:lemonchiffon;">
+            getInfraredInfo.html
+          </ons-list-item>
+        </ons-list>
+      </ons-page>
+    </ons-template>
+    <!-- menu bar -->
+    <!-- homeページ -->
+    <ons-template id="home.html" >
+      <ons-page modifier="material" ng-controller="SwitchController as switch">
+        <ons-navigator var="mynavigator">
+          <ons-toolbar class="i-toolbar" modifier="material">
+            <div class="left">
+              <ons-toolbar-button ng-click="menu.open()" modifier="material">
+                <ons-icon icon="md-menu"></ons-icon>
+              </ons-toolbar-button>
+            </div>
+            <div class="center" id="submit">
+              HOME
+            </div>
+            <div class="right">
+            </div>
+            <div class="clear"></div>
+            <div class="account">
+              <div class="user_content">
+                <div class="user_icon">
+                  icon
+                  <ons-icon>
+                  </ons-icon>
+                </div>
+                <div class="user_name">
+                  username
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="room_content">
+                <div class="room_icon">
+                  icon
+                </div>
+                <div class="room_ondo">
+                  27度
+                </div>
+                <div class="room_bright">
+                  明るい
+                </div>
+                <div class="clear"></div>
+              </div>
+            </div>
+            <ons-fab class="plus-button" ng-click ="switch.pushToGroupAdd();">
+              <ons-icon icon="md-plus" size="24px" style="line-height: 56px;"></ons-icon>
+            </ons-fab>
+          </ons-toolbar>
+          <div class="main-content">
+            <div class="i-list home">
+              <div class="i-list-inner" onclick ="mynavigator.pushPage('infradTable/index.html')">
+                <div class="i-list-left">
+                  すべて
+                  <div class="icon">
+                    <img src="">
+                  </div>
+                </div>
+                <div class="irname">
+                </div>
+              </div>
+              <div class="i-list-inner">
+                <div class="i-list-left">
+                  kiteru
+                  <div class="icon">
+                    <img src="">
+                  </div>
+                </div>
+                <div class="irname">
+                </div>
+              </div>
+              <div class="i-list-inner">
+                <div class="i-list-left">
+                  kiteru
+                  <div class="icon">
+                    <img src="">
+                  </div>
+                </div>
+                <div class="irname">
+                </div>
+              </div>
+              <div class="i-list-inner">
+                <div class="i-list-left">
+                  kiteru
+                  <div class="icon">
+                    <img src="">
+                  </div>
+                </div>
+                <div class="irname">
+                </div>
+              </div>
+              <div class="i-list-inner">
+                <div class="i-list-left">
+                  kiteru
+                  <div class="icon">
+                    <img src="">
+                  </div>
+                </div>
+                <div class="irname">
+                </div>
+              </div>
+              <div class="i-list-inner">
+                <div class="i-list-left">
+                  kiteru
+                  <div class="icon">
+                    <img src="">
+                  </div>
+                </div>
+                <div class="irname">
+                </div>
+              </div>
+              <div class="i-list-inner">
+                <div class="i-list-left">
+                  kiteru
+                  <div class="icon">
+                    <img src="">
+                  </div>
+                </div>
+                <div class="irname">
+                </div>
+              </div>
+              <div class="i-list-inner">
+                <div class="i-list-left">
+                  kiteru
+                  <div class="icon">
+                    <img src="">
+                  </div>
+                </div>
+                <div class="irname">
+                </div>
+              </div>
+              <div class="i-list-inner">
+                <div class="i-list-left">
+                  kiteru
+                  <div class="icon">
+                    <img src="">
+                  </div>
+                </div>
+                <div class="irname">
+                </div>
+              </div>
+              <div class="i-list-inner">
+                <div class="i-list-left">
+                  kiteru
+                  <div class="icon">
+                    <img src="">
+                  </div>
+                </div>
+                <div class="irname">
+                </div>
+              </div>
+              <div class="i-list-inner">
+                <div class="i-list-left">
+                  kiteru
+                  <div class="icon">
+                    <img src="">
+                  </div>
+                </div>
+                <div class="irname">
+                </div>
+              </div>
+              <div class="i-list-inner">
+                <div class="i-list-left">
+                  kiteru
+                  <div class="icon">
+                    <img src="">
+                  </div>
+                </div>
+                <div class="irname">
+                </div>
+              </div>
+              <div class="i-list-inner">
+                <div class="i-list-left">
+                  kiteru
+                  <div class="icon">
+                    <img src="">
+                  </div>
+                </div>
+                <div class="irname">
+                </div>
+              </div>
+            </div>
+          </div>
+        </ons-navigator>
+      </ons-page>
+    </ons-template>
+    <!-- homeページ -->
+    <script>
+      // $(function(){
 
-        $.ajax({
-          url: "http://b917fc44.ngrok.io:80/api/v1/ir/send.json",
-          type: "POST",
-          data: {
-            "auth_token": aircon_token,
-            "ir_id": id
-          },
-          success:function(msg){
-            alert("success");
-            console.log("kiteru");
-          },
-          error:function(){
-            alert("error");
-          }
+      //   $("#submit").on("click" , function(){
+      //     console.log("hoge")
+      //     aircon_token="1KiJPrFitLQAv0ZuqDAMmg",
+      //     window.id=22,
+
+      //     $.ajax({
+      //       url: "http://b917fc44.ngrok.io:80/api/v1/ir/send.json",
+      //       type: "POST",
+      //       data: {
+      //         "auth_token": aircon_token,
+      //         "ir_id": id
+      //       },
+      //       success:function(msg){
+      //         alert("success");
+      //         console.log("kiteru");
+      //       },
+      //       error:function(){
+      //         alert("error");
+      //       }
+      //     });
+      //   })
+      // });
+      $(function(){
+        console.log("kiteru")
+        $("#submit").on("click", function(){
+          console.log("eeyan")
+            $.ajax({
+                url: ""+localStorage.getItem("switch-site_url")+"/api/v1/ir.json",
+                type: "GET",
+                data:{
+                    "auth_token": localStorage.getItem("switch-auth_token")
+                },
+                success: function(msg){
+                  // console.log(msg)
+                  window.hoge=msg
+                },
+                error: function(){
+                  console.log("error")
+                }
+            });
         });
-      })
-    });
-  </script>
-</body>
+      });
+    </script>
+  </body>
 </html>
