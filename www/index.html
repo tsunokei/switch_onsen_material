@@ -17,12 +17,10 @@
     <script src="jquery-2.1.4.min.js"></script>
     <title>switch</title>
     <script>
-    console.log("hoge")
-       if(localStorage.getItem('switch-site_url')){
-      if(!localStorage.getItem('switch-auth_token')){
-          location.href="login/index.html"
-
-      }else{
+      if(localStorage.getItem('switch-site_url')){
+        if(!localStorage.getItem('switch-auth_token')){
+            location.href="login/index.html"
+        }else{
           site_url= localStorage.getItem('switch-site_url')
           auth_token=localStorage.getItem('switch-auth_token')
           $.ajax({
@@ -32,20 +30,23 @@
               "auth_token": auth_token,
             },
             success: function(msg){
-                console.log("hoge")
                 console.log(msg)
             },
-            error: function(){
-                location.href="singup/index.html"
-                // console.log("error")
+            error: function(msg){
+              console.log(msg)
+              if(msg.status = 404){
+                location.href="api/index.html"
+              }else{
+                location.href="signup/index.html"
+              }
             }
           });
+        }
+      }else{
+        location.href="api/index.html"
+        console.log("hoge")
       }
-    }else{
-      location.href="api/index.html"
-      console.log("hoge")
-    }
-</script>
+    </script>
   </head>
   <body>
     <!-- menu bar -->
@@ -263,12 +264,12 @@
     <!-- homeページ -->
     <script>
       // $(function(){
-      
+
       //   $("#submit").on("click" , function(){
       //     console.log("hoge")
       //     aircon_token="1KiJPrFitLQAv0ZuqDAMmg",
       //     window.id=22,
-      
+
       //     $.ajax({
       //       url: "http://b917fc44.ngrok.io:80/api/v1/ir/send.json",
       //       type: "POST",
