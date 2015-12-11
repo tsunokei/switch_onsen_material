@@ -46,7 +46,7 @@
         </ons-page>
       </ons-template>
   <ons-template id ="addindex.html">
-		<ons-page modifier="material">
+		<ons-page modifier="material" ng-controller="SwitchController as switch">
 
 			<ons-toolbar modifier="material">
 			    <div class="left">
@@ -70,7 +70,7 @@
             <p>登録する赤外線機器を準備してtryボタンを押してください</p>
           </div>
           <div class="try_button">
-            <ons-button modifier="material" style="padding-right:150px;padding-left:150px; margin:0 auto;">
+            <ons-button modifier="material" style="padding-right:150px;padding-left:150px; margin:0 auto;"ng-click="switch.pushToNewIR();">
             try
             </ons-button>
           </div>
