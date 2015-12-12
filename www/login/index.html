@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../lib/onsenui/css/onsen-css-components.css" type="text/css" media="all" />
     <link rel="stylesheet" href="../angular/app.css" type="text/css" media="all" />
     <link rel="stylesheet" href="../css/style.css" type="text/css">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="../login/style.css" type="text/css">
 
     <script src="../lib/onsenui/js/onsenui.js"></script>
     <script src="../lib/angular/angular.js"></script>
@@ -22,6 +22,7 @@
     </script>
 </head>
 <body>
+  <ons-page modifier="material" ng-controller="SwitchController as switch">
 	<div class="content">
     <div style="height:50px"></div>
     <div class="forms">
@@ -45,16 +46,18 @@
         </a>
       </div>
         <div class="submit">
-          <ons-button modifier="material" id="submit" ng-click="switch.login()">
+          <ons-button modifier="material" id="submit" ng-click="switch.login();">
             送信
           </ons-button>
         </div>
       </div>
     </div>
   </div>
+  </ons-page>
 	<script>
 		$(function(){
 			$("#submit").on("click",function(){
+
 				site_url = localStorage.getItem('switch-site_url')
 				identifier = $("#email_or_screen_name").val();
 				password = $("#password").val();

@@ -132,31 +132,36 @@
       })
     }
     this.login = function(){
-        $.ajax({
-          url: site_url + "/api/v1/auth/login.json",
-          type: "POST",
-          data: {
-            "email_or_screen_name": identifier,
-            "password": password
-          },
-          success: function(msg){
-            localStorage.setItem("switch-auth_token",msg["response"]["auth_token"]);
-            location.href = "../index.html"
-          },
-          error: function(error){
-            if(error.status == 404){
-              localStorage.setItem("switch-site_url","")
-              location.href = "../api/index.html"
-            }else{
-              text = "<ul>";
-              messages = error.responseJSON.meta.errors.forEach(function(err){
-                text += "<li class='error'>" + err.message + "</li>";
-              });
-              text += "</ul>"
-              $("#error_messages").html(text);
-            }
+      console.log("kiteruyan")
+      site_url = localStorage.getItem('switch-site_url')
+      identifier = $("#email_or_screen_name").val();
+      password = $("#password").val();
+      console.log(password)
+      $.ajax({
+        url: site_url + "/api/v1/auth/login.json",
+        type: "POST",
+        data: {
+          "email_or_screen_name": identifier,
+          "password": password
+        },
+        success: function(msg){
+          localStorage.setItem("switch-auth_token",msg["response"]["auth_token"]);
+          location.href = "../index.html"
+        },
+        error: function(error){
+          if(error.status == 404){
+            localStorage.setItem("switch-site_url","")
+            location.href = "../api/index.html"
+          }else{
+            text = "<ul>";
+            messages = error.responseJSON.meta.errors.forEach(function(err){
+              text += "<li class='error'>" + err.message + "</li>";
+            });
+            text += "</ul>"
+            $("#error_messages").html(text);
           }
-        });
+        }
+      });
     }
     this.logout = function(){
       $.ajax({
@@ -189,7 +194,7 @@
       location.href="index.html"
     }
     this.pushToLogin = function(){
-      mynavigator.pushPage("../login/index.html",{animation:"lift"})
+      mynavigator.resetToPage("../login/index.html",{animation:"lift"})
     }
 
     this.renameInfrad = function(item_id,name){
