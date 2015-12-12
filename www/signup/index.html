@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang = "ja">
+<html lang = "ja" ng-app="app">
   <head>
    <meta charset="utf-8" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,55 +32,58 @@
             error: function(){
               localStorage.setItem("switch-site_url","")
               location.href = "../api/index.html"
-              // console.log("hoge")
+
             }
           });
         }
       }else{
-        location.href = "../api/index.html"
-        console.log("hogehoge")
+        location.href = "../login/index.html";
+
       }
     </script>
   </head>
   <body>
-    <div class="content">
-      <div class="frame-upon">
-      </div>
-        <div class="frame z1">
-          <h1>ユーザー登録</h1>
-          <div class="forms">
-          <div id="error_messages"></div>
-          <label style="">ユーザー名</label>
-          <input id="screen_name" placeholder="gamerinshaft" size="23" style=""><br>
-          <label style="">メールアドレス</label>
-          <input id="email" placeholder="gamerinshaft@example.com" size="23" style=""><br>
-          <label style="">メールアドレス(確認用)</label>
-          <input id="email_confirm" placeholder="gamerinshaft@example.com" size="23"><br>
-          <label style="">パスワード</label>
-          <input id="password" type="password" placeholder="password" size="23"><br>
-        </div>
+    <ons-navigator var="mynavigator">
+      <ons-page modifier="material" ng-controller="SwitchController as switch">
 
-          <div class="bottom-msg">
-            <div class="login-msg">
-              <a href="../login/index.html">
-                <p>ログインはこちら</p>
-              </a>
+      <div class="content">
+        <div class="frame-upon">
+        </div>
+          <div class="frame z1">
+            <h1>ユーザー登録</h1>
+            <div class="forms">
+            <div id="error_messages"></div>
+            <label style="">ユーザー名</label>
+            <input id="screen_name" placeholder="gamerinshaft" size="23" style=""><br>
+            <label style="">メールアドレス</label>
+            <input id="email" placeholder="gamerinshaft@example.com" size="23" style=""><br>
+            <label style="">メールアドレス(確認用)</label>
+            <input id="email_confirm" placeholder="gamerinshaft@example.com" size="23"><br>
+            <label style="">パスワード</label>
+            <input id="password" type="password" placeholder="password" size="23"><br>
+          </div>
+
+            <div class="bottom-msg">
+              <div class="login-msg" ng-click="switch.pushToLogin();">
+                  <p>ログインはこちら</p>
+              </div>
+              <div class="submit-button">
+              <ons-button modifier="material">
+                送信
+              </ons-button>
             </div>
-            <div class="submit-button">
-            <ons-button modifier="material">
-              送信
-            </ons-button>
-          </div>
-             <div class="clear"></div>
-          </div>
+               <div class="clear"></div>
+            </div>
 
 
 
-          <div class="blank"></div>
+            <div class="blank"></div>
 
+           </div>
         </div>
-      </div>
-    </div>
+     </ons-page>
+      </ons-navigator>
+
     <script>
       $(function(){
         console.log("wai")

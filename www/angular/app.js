@@ -187,7 +187,9 @@
     this.pushToHome = function(){
       console.log("kiteru")
       location.href="index.html"
-
+    }
+    this.pushToLogin = function(){
+      mynavigator.pushPage("../login/index.html",{animation:"lift"})
     }
 
     this.renameInfrad = function(item_id,name){
