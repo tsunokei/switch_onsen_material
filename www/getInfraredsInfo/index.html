@@ -37,6 +37,7 @@
           </ons-toolbar>
 
           <div class="main-content">
+
           <br>
 <!--             <ons-button modifier="material" ng-click="switch.getInfradInfo();" class="addbutton" id="add">
               Add
@@ -60,14 +61,14 @@
 <!--           <div ng-controller = "infrad">
             <p>{{info}}</p>
           </div> -->
-          <ons-list　modifier="material" ng-init="switch.getInfradInfo();">
-
+          <ons-list modifier="material" ng-init="switch.getInfradInfo();">
             <ons-list-item id="{{item.id}}" modifier="tappable" ng-repeat="item in infrad" style="background-color:white" ng-click="switch.send(item.id);">
             {{item.name}}
             <!-- <p id="submit">ON</p> -->
           </ons-list-item>
         </ons-list>
+
         </ons-navigator>
       </ons-page>
-    </ons-template>
+
     <!-- homeページ -->

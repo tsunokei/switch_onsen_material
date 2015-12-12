@@ -1,0 +1,58 @@
+.content{
+	width:100%;
+	height:100%;
+	text-align: center;
+
+}
+.forms{
+	background-color:white;
+	width:95%;
+	margin: 0 auto;
+	padding-bottom:100px;
+}
+.frame-upon{
+/*margin-top:110px;*/
+	height:80px;
+}
+.frame{
+	padding-top:10px;
+	padding-bottom:20px;
+	background-color:white;
+
+	box-shadow: 0.1px 0.1px 1px 0.001px;
+
+
+	width: 94%;
+	margin: 0 auto;
+}
+
+.forms label{
+	margin-left:10px;
+	font-size:13px;
+	float:left;
+}
+.forms a label{
+	font-size:16px;
+}
+.forms input{
+	float: left;
+}
+.submit{
+	float:left;
+}
+#password{
+	margin-left: 60px;
+}
+.tosignup{
+	width:140px;
+	text-align:left;
+	float:left;
+	margin-left:20px;
+	/*margin-bottom:-10px;*/
+}
+.submit{
+	width: 60px;
+	float:left;
+	margin-right:0px;
+	margin-left: 110px;
+}
