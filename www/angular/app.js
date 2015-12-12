@@ -56,9 +56,20 @@
     this.pushToNewIR = function(){
       mynavigator.pushPage('newir/index.html');
     }
+<<<<<<< HEAD
+=======
+
+  // var id;
+    this.pushToDetail = function(item_id){
+      window.id=item_id,
+      console.log(id);
+      mynavigator.pushPage('rename/index2.html');
+    }
+>>>>>>> 86c322820d2f3bfe716c776a4d5eb64edc419f5b
 
     this.getInfradInfo = function(){
           console.log("eeyan")
+          // localStorage.removeItem()
             $.ajax({
                 url: ""+localStorage.getItem("switch-site_url")+"/api/v1/ir.json",
                 type: "GET",
@@ -67,9 +78,15 @@
                 },
                 success: function(msg){
                   console.log(msg)
+
+                  hoge=msg
                   hoge2=msg["response"]["infrareds"]
+                  console.log(hoge2)
                   obj = JSON.stringify(hoge2);
+                  localStorage.removeItem("l_obj");
                   localStorage.setItem("l_obj",obj);
+
+                  // console.log(hoge2);
 
                 },
                 error: function(){
@@ -78,8 +95,10 @@
             });
 
             obj2 = localStorage.getItem("l_obj");
-            var hoge2 = JSON.parse(obj2);
-            console.log(hoge2)
+
+            hoge2 = JSON.parse(obj2);
+            // console.log(hoge2);
+            console.log(hoge2);
 
             $scope.infrad = hoge2;
 
@@ -168,6 +187,35 @@
 
     }
 
+    this.renameInfrad = function(item_id,name){
+
+        // console.log(id)
+        // console.log(item_name)
+        // window.id=item_id,
+        window.item_name = document.getElementById("newName").value
+        // $scope.text=item_name,
+        console.log(item_id)
+        console.log(item_name)
+
+        $.ajax({
+          url: ""+localStorage.getItem("switch-site_url") +":80"+ "/api/v1/ir/rename.json",
+          type: "PUT",
+          data: {
+            "auth_token": localStorage.getItem("switch-auth_token"),
+            "name": item_name,
+            "ir_id": item_id
+          },
+          success:function(msg){
+            console.log("kiteru");
+            // getInfradInfo.call();
+            // window.location.reload();
+          },
+          error:function(){
+            alert("error");
+          }
+      })
+    }
+
     // $(function(){
     //   console.log("hage")
     //   $("#submit").on("click" , function(){
@@ -193,6 +241,11 @@
     //     });
     //   })
     // });
+
+    // this.rename_icon = function(){
+    //   this.selectedItem = $index;
+    //   this.focusInput();
+    // }
 
     this.selectedItem = -1;
   });
