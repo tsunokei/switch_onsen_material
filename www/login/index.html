@@ -22,25 +22,34 @@
     </script>
 </head>
 <body>
-	<div class="container max-h">
-    <div class="column max-h">
-      <div class="flex flex-xs-auto"></div>
-      <div class="frame z1">
-        <div class="row">
-          <div class="flex flex-xs-auto"></div>
+	<div class="content">
+    <div style="height:50px"></div>
+    <div class="forms">
+      
+        <div style="height:30px"></div>
             <h1>ログイン</h1>
-          <div class="flex flex-xs-auto"></div>
-        </div>
-        <div id="error_messages"></div>
+
+        <!-- <div id="error_messages"></div> -->
+        <div style="height:40px"></div>
         <label>ユーザー名またはメールアドレス</label>
         <input id="email_or_screen_name" placeholder="gamerinshaft">
-        <label>パスワード</label>
+        <div style="height:50px"></div>
+        <div class="clear"></div>
+        <label style="margin-left:80px;">パスワード</label>
         <input id="password" type="password" placeholder="password">
-        <a href="../signup/index.html">新規登録はこちら</a>
-        <div id="submit" class="submit">送信</div>
-        <div class="blank"></div>
+        <div style="height:90px"></div>
+        <div class="bottom-msg">
+        <div class="tosignup">
+        <a href="../signup/index.html">
+          <p>新規登録はこちら</p>
+        </a>
       </div>
-      <div class="flex flex-xs-auto"></div>
+        <div class="submit">
+          <ons-button modifier="material" id="submit" ng-click="switch.login()">
+            送信
+          </ons-button>
+        </div>
+      </div>
     </div>
   </div>
 	<script>

@@ -23,7 +23,7 @@
 	/*text-align: right;*/
 	margin-right: 30px;
 	/*margin-bottom:80px;*/
-	margin-bottom:60px;
+	margin-bottom:100px;
 	padding-top:20px;
 }
 .forms input{
@@ -34,4 +34,32 @@
 }
 .forms label{
 	font-size: 13px;
+}
+
+#screen_name{
+	margin-right:-70px;
+	/*margin-left: 70px;*/
+}
+#email{
+	margin-right:-45px;
+}
+#password{
+	margin-right:-70px;
+}
+.login-msg{
+	width:150px;
+	text-align:left;
+	margin-left: 20px;
+	float:left;
+}
+.login-msg p{
+
+}
+.submit-button{
+
+	/*margin-left: 140px;*/
+	margin-right:-70px;
+}
+.bottom-msg{
+	width:100%;
 }

@@ -1,0 +1,50 @@
+body{
+	background-color:white;
+}
+.main-content{
+	background-color:white;
+}
+.msg{
+	padding-top:50px;
+}
+.msg p{
+	color:black;
+	opacity:1;
+	font-size: 24px;
+
+}
+.button-back{
+	/*margin-top:20px;*/
+	text-align:center;
+	width:100%;
+
+}
+.buttons{
+	margin:0 auto;
+	text-align:center;
+	height:35px;
+	width:234px;
+	/*padding-left:60px;*/
+
+}
+.quit-button{
+	float:left;
+	margin-right:40px;
+	/*margin-left:30px;*/
+}
+.again-button{
+	float:left;
+	margin-left:40px;
+	/*right:30px;*/
+}
+.image-back .image{
+	margin:0 auto;
+	width: 130px;
+	height: 130px;
+}
+.img-back .image img{
+	width: 130px;
+}
+.img-back p{
+	color: black;
+}

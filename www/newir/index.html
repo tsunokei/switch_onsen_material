@@ -19,18 +19,47 @@
     <script src="angular/app.js"></script> 
     <script src="jquery-2.1.4.min.js"></script>
     <script>
+      console.log("kiterukiterukiteru")
     </script>
     <title>new ir</title>
   </head>
   <body>
+
+
+    <ons-page modifier="material" ng-controller="SwitchController as switch">
+    <ons-navigator>
     <div class="main-content">
       <div class="msg">
-        <p>受信状態です照射してください</p>
+        <p><strong>受信状態です照射してください</strong></p>
       </div>
-      <div class="">
+      <div class="img-back" style="height:500px">
+        <div style="height:100px">
+        </div>
+        <div class="image">
+          <img src="lording.gif">
+        </div>
+        <p>受信状態です。赤外線を照射してください</p>
       </div>
-
+      <div class="button-back">
+        <div class="buttons">
+          <div class="quit-button">
+            <ons-button modifier="material" ng-click=""style="padding-right:23px;padding-left:23px;margin:0">
+              quit
+            </ons-button>
+          </div>
+          <div class="again-button">
+            <ons-button modifier="material"ng-click="switch.pushToResister();" style="margin 0;">
+              done
+            </ons-button>
+          </div>
+        </div>
+          <div class="clear"></div>
+          </div>
     </div>
-
+    </ons-navigator>
+    </ons-page>
+    <script>
+      console.log("直接書き込めるやん ")
+    </script>
   </body>
 </html>

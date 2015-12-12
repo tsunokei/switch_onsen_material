@@ -24,7 +24,7 @@
 
 
 		<ons-page modifier="material" ng-controller="SwitchController as switch">
-
+    <ons-navigator>
 			<ons-toolbar modifier="material">
 			    <div class="left">
             		<ons-toolbar-button ng-click="menu.open()" modifier="material">
@@ -65,7 +65,7 @@
               <p>
               <input type="text" size="40">
               </p>
-              <ons-button modifier="material" onclick="" class="addbutton" id="add">
+              <ons-button modifier="material" onclick="switch.makeGroup();" class="addbutton" id="add">
               Add
               </ons-button>
               <div class="clear"></div>
@@ -89,6 +89,7 @@
           </div>
         </div>
       </div>
+      </ons-navigator>
 		</ons-page>
   </ons-template>
 
