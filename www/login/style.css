@@ -2,6 +2,7 @@
 	width:100%;
 	height:100%;
 	text-align: center;
+	background-color:#C8E6C9;
 
 }
 .forms{
@@ -18,10 +19,7 @@
 	padding-top:10px;
 	padding-bottom:20px;
 	background-color:white;
-
 	box-shadow: 0.1px 0.1px 1px 0.001px;
-
-
 	width: 94%;
 	margin: 0 auto;
 }
