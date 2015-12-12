@@ -54,7 +54,7 @@
       console.log("ajaxしたい")
     }
     this.pushToNewIR = function(){
-      mynavigator.pushPage('newir/index.html');
+      mynavigator.pushPage('newir/index.html',{animation:"lift"});
     }
 
   // var id;
@@ -186,12 +186,14 @@
     }
 
     this.pushToResister = function(){
-      mynavigator.pushPage('register/index.html');
+      mynavigator.pushPage('register/index.html',{animation:"lift"});
     }
 
     this.pushToHome = function(){
       console.log("kiteru")
-      location.href="index.html"
+      // location.href="index.html"
+      mynavigator.popPage('',{animation:"slide"})
+
     }
     this.pushToLogin = function(){
       mynavigator.resetToPage("../login/index.html",{animation:"lift"})
