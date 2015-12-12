@@ -56,8 +56,6 @@
     this.pushToNewIR = function(){
       mynavigator.pushPage('newir/index.html');
     }
-<<<<<<< HEAD
-=======
 
   // var id;
     this.pushToDetail = function(item_id){
@@ -65,7 +63,6 @@
       console.log(id);
       mynavigator.pushPage('rename/index2.html');
     }
->>>>>>> 86c322820d2f3bfe716c776a4d5eb64edc419f5b
 
     this.getInfradInfo = function(){
           console.log("eeyan")
@@ -83,10 +80,16 @@
                   hoge2=msg["response"]["infrareds"]
                   console.log(hoge2)
                   obj = JSON.stringify(hoge2);
-                  localStorage.removeItem("l_obj");
+                  // localStorage.removeItem("l_obj");
                   localStorage.setItem("l_obj",obj);
 
                   // console.log(hoge2);
+
+
+                  hoge2=msg["response"]["infrareds"]
+                  obj = JSON.stringify(hoge2);
+                  localStorage.setItem("l_obj",obj);
+
 
                 },
                 error: function(){
@@ -98,7 +101,7 @@
 
             hoge2 = JSON.parse(obj2);
             // console.log(hoge2);
-            console.log(hoge2);
+            console.log(hoge2)
 
             $scope.infrad = hoge2;
 
@@ -216,36 +219,7 @@
       })
     }
 
-    // $(function(){
-    //   console.log("hage")
-    //   $("#submit").on("click" , function(){
-    //     console.log("hoge")
-    //     // aircon_token="1KiJPrFitLQAv0ZuqDAMmg",
-    //     aircon_token="aC_ZBshcAXi1kVJdpLQ2lw",
-    //     window.id=22,
 
-    //     $.ajax({
-    //       url: ""+localStorage.getItem("switch-site_url")+"/api/v1/ir.json",
-    //       type: "POST",
-    //       data: {
-    //         "auth_token": aircon_token,
-    //         "ir_id": id
-    //       },
-    //       success:function(msg){
-    //         alert("success");
-    //         console.log("kiteru");
-    //       },
-    //       error:function(){
-    //         alert("error");
-    //       }
-    //     });
-    //   })
-    // });
-
-    // this.rename_icon = function(){
-    //   this.selectedItem = $index;
-    //   this.focusInput();
-    // }
 
     this.selectedItem = -1;
   });
