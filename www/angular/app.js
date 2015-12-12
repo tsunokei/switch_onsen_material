@@ -75,7 +75,7 @@
                 },
                 success: function(msg){
                   console.log(msg)
-// <<<<<<< HEAD
+
                   hoge=msg
                   hoge2=msg["response"]["infrareds"]
                   console.log(hoge2)
@@ -85,12 +85,12 @@
 
                   // console.log(hoge2);
 
-// =======
+
                   hoge2=msg["response"]["infrareds"]
                   obj = JSON.stringify(hoge2);
                   localStorage.setItem("l_obj",obj);
 
-// >>>>>>> develop
+
                 },
                 error: function(){
                   console.log("error")
@@ -98,14 +98,10 @@
             });
 
             obj2 = localStorage.getItem("l_obj");
-// <<<<<<< HEAD
+
             hoge2 = JSON.parse(obj2);
             // console.log(hoge2);
-            console.log(hoge2);
-// =======
-            var hoge2 = JSON.parse(obj2);
             console.log(hoge2)
-// >>>>>>> develop
 
             $scope.infrad = hoge2;
 
