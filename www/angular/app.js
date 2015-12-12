@@ -171,8 +171,11 @@
       console.log("kiteru")
       location.href="index.html"
     }
-    this.pushToLogin = function(){
+    this.pushToLoginpage = function(){
       mynavigator.resetToPage("../login/index.html",{animation:"lift"})
+    }
+    this.pushToSignuppage=function(){
+      mynavigator.resetToPage("../signup/index.html",{animation:"lift"})
     }
 
     // $(function(){

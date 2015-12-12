@@ -51,27 +51,27 @@
         </div>
           <div class="frame z1">
             <h1>ユーザー登録</h1>
-            <div class="forms">
+            <div class="frame">
             <div id="error_messages"></div>
-            <label style="">ユーザー名</label>
+            <label style="">username </label>
             <input id="screen_name" placeholder="gamerinshaft" size="23" style=""><br>
-            <label style="">メールアドレス</label>
+            <label style="">email address</label>
             <input id="email" placeholder="gamerinshaft@example.com" size="23" style=""><br>
-            <label style="">メールアドレス(確認用)</label>
+            <label style="">email confirm</label>
             <input id="email_confirm" placeholder="gamerinshaft@example.com" size="23"><br>
-            <label style="">パスワード</label>
+            <label style="">password</label>
             <input id="password" type="password" placeholder="password" size="23"><br>
           </div>
 
             <div class="bottom-msg">
-              <div class="login-msg" ng-click="switch.pushToLogin();">
-                  <p>ログインはこちら</p>
+              <div class="login-msg" ng-click="switch.pushToLoginpage();">
+                  <p>Login</p>
               </div>
-              <div class="submit-button">
-              <ons-button modifier="material">
+
+              <ons-button modifier="material" class="submit-button" ng-click="switch.signup();">
                 送信
               </ons-button>
-            </div>
+
                <div class="clear"></div>
             </div>
 
