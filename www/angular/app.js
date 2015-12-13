@@ -56,7 +56,7 @@
       console.log("ajaxしたい")
     }
     this.pushToNewIR = function(){
-<<<<<<< HEAD
+
 
       console.log("kiterussu")
       mynavigator.pushPage('newir/index.html',{animation:'lift'});
@@ -79,8 +79,7 @@
 
 
 
-=======
-      mynavigator.pushPage('newir/index.html',{animation:"lift"});
+
     }
 
   // var id;
@@ -88,7 +87,7 @@
       window.id=item_id,
       console.log(id);
       mynavigator.pushPage('rename/index2.html');
->>>>>>> c86c84d2c377cd533e56bee6e44235066836785f
+
     }
 
     this.getInfradInfo = function(){
@@ -104,26 +103,15 @@
                   console.log(msg)
 
                   hoge=msg
-<<<<<<< HEAD
+
+
                   hoge2=msg["response"]["infrareds"]
                   console.log(hoge2)
                   obj = JSON.stringify(hoge2);
                   // localStorage.removeItem("l_obj");
                   localStorage.setItem("l_obj",obj);
 
-                  // console.log(hoge2);
 
-
-=======
->>>>>>> c86c84d2c377cd533e56bee6e44235066836785f
-                  hoge2=msg["response"]["infrareds"]
-                  console.log(hoge2)
-                  obj = JSON.stringify(hoge2);
-                  // localStorage.removeItem("l_obj");
-                  localStorage.setItem("l_obj",obj);
-
-<<<<<<< HEAD
-=======
                   // console.log(hoge2);
 
 
@@ -131,7 +119,7 @@
                   obj = JSON.stringify(hoge2);
                   localStorage.setItem("l_obj",obj);
 
->>>>>>> c86c84d2c377cd533e56bee6e44235066836785f
+
 
                 },
                 error: function(){
