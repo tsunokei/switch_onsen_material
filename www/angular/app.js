@@ -75,11 +75,14 @@
           console.log("error")
         }
       });
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> origin/develop
     }
 
   // var id;
@@ -104,22 +107,32 @@
 
                   hoge=msg
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/develop
                   hoge2=msg["response"]["infrareds"]
                   console.log(hoge2)
                   obj = JSON.stringify(hoge2);
                   // localStorage.removeItem("l_obj");
                   localStorage.setItem("l_obj",obj);
 
+<<<<<<< HEAD
 
                   // console.log(hoge2);
+=======
+      // console.log(hoge2);
+>>>>>>> origin/develop
 
 
                   hoge2=msg["response"]["infrareds"]
                   obj = JSON.stringify(hoge2);
                   localStorage.setItem("l_obj",obj);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/develop
 
                 },
                 error: function(){
