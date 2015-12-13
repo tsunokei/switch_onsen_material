@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../lib/onsenui/css/onsen-css-components.css" type="text/css" media="all" />
     <link rel="stylesheet" href="../angular/app.css" type="text/css" media="all" />
     <link rel="stylesheet" href="../css/style.css" type="text/css">
-    <link rel="stylesheet" href="../login/style.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
 
     <script src="../lib/onsenui/js/onsenui.js"></script>
     <script src="../lib/angular/angular.js"></script>
@@ -23,18 +23,14 @@
 </head>
 <body>
 
-  <ons-page modifier="material" ng-controller="SwitchController as switch">
 
 <ons-page modifier="material" ng-controller="SwitchController as switch">
-
+  <ons-navigator var="mynavigator">
 	<div class="content">
 
-    <div style="height:50px"></div>
-    <div class="forms">
-
-        <div style="height:30px"></div>
-
-    <div style="height:80px"></div>
+    <div style="height:100px"></div>
+    <div class="frame">
+    <!-- <div style="height:50px"></div> -->
     <div class="frame">
 
         <div style="height:0px"></div>
@@ -50,7 +46,7 @@
           <div class="clear"></div>
           <label>password</label>
           <input id="password" type="password" placeholder="password">
-          <div style="height:60px"></div>
+          <div style="height:50px"></div>
           <div class="bottom-msg">
             <div class="tosignup">
               <p ng-click="switch.pushToSignuppage();">Sign up</p>
@@ -65,7 +61,7 @@
     </div>
   </div>
 
-  </ons-page>
+  </ons-navigator>
 </ons-page>
 
 	<script>

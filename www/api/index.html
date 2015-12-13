@@ -40,12 +40,14 @@
       $("#submit").on("click",function(){
       	console.log("hoge")
         site_url = $("#url").val()
+        console.log(site_url)
         $.ajax({
           url: "" + site_url + "/api/v1/auth/token.json",
           type:"GET",
           success: function(msg){
             localStorage.setItem("switch-site_url", "" + site_url)
             localStorage.setItem("switch-auth_token",msg["response"]["auth_token"]);
+            console.log("success")
             location.href = "../signup/index.html"
           },
           error: function(error){

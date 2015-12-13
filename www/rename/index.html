@@ -39,36 +39,21 @@
           <div class="main-content">
           <br>
           <br>
-<!--           <div class="addbutton allinfrad">
-            <ons-button modifier="material" onclick="" class="addbutton">
-              Add
-            </ons-button>
-          </div> -->
+
           <div style="text-align: center">
+          
+
+
+
           <ons-list　modifier="material" ng-init="switch.getInfradInfo();">
-
-<!--           <section style="padding: 8px">
-          <input type="text" class="text-input" id="name" ng-model="text" placeholder="Type here" style="display: block; width: 100%">
-          </section> -->
-
-  <!--         <section style="padding: 0 8px 8px">
-          <ons-button modifier="large" ng-click="switch.renameInfrad(item.id,);">Submit</ons-button>
-          </section> -->
-
-
-<!--           <section style="padding: 0 8px 8px">
-          <textarea class="textarea" ng-model="text2" placeholder="Type here" style="width: 100%; height: 100px;"></textarea>
-          </section> -->
             <ons-list-item id="{{item.id}}""{{name}}" modifier="tappable" ng-repeat="item in infrad" style="background-color:white">
             <!-- {{item.name}} -->
             <ons-material-input id="newName" ng-show="switch.selectedItem == $index" type="text" ng-model="text" ng-blur="switch.selectedItem = -1"></ons-material-input>
             <span id="new_name" class="title" ng-hide="switch.selectedItem == $index" ng-click="switch.selectedItem = $index; switch.focusInput($event)" >{{item.name}}
             </span>
 
-            <ons-icon icon="ion-ios-compose-outline" size="30px" ng-click="switch.renameInfrad(item.id,newName);mynavigator.resetToPage('infradTable/index.html');
-            mynavigator.resetToPage('index.html');"></ons-icon>
+            <ons-icon icon="ion-ios-compose-outline" size="30px" ng-click="switch.renameInfrad(item.id,newName);"></ons-icon>
             <ons-icon icon="ion-social-rss" size="30px" ng-click="switch.send(item.id);"style="margin-left:20px"></ons-icon>
-
           </ons-list-item>
         </ons-list>
         </ons-navigator>
