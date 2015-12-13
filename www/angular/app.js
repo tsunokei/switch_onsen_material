@@ -24,7 +24,9 @@
       // }
       //　名前
     ];
-    console.log(items)
+    // console.log(items)
+    console.log("eeyanke")
+    console.log((new Date()).getTime())
 
 
     this.newTodo = function() {//itemsリストに追加するよ
@@ -60,7 +62,7 @@
     this.getInfradInfo = function(){
           console.log("eeyan")
             $.ajax({
-                url: ""+localStorage.getItem("switch-site_url")+"/api/v1/ir.json",
+                url: ""+localStorage.getItem("switch-site_url")+"/api/v1/ir.json"+"?"+((new Date).getTime()),
                 type: "GET",
                 data:{
                     "auth_token": localStorage.getItem("switch-auth_token")
@@ -109,6 +111,49 @@
         // });
       })
     }
+    this.removeir  = function(item_id){
+      id=item_id
+
+      $.ajax({
+        url: ""+localStorage.getItem("switch-site_url") + "/api/vi/ir.json",
+        type: "DELETE",
+        data:{
+          "auth_token": localStorage.getItem("switch-auth_token"),
+          "ir_id": id
+        },
+        success: function(msg){
+          console.log(msg)
+          console.log(success)
+          mynavigator.getCurrentPage();
+        },
+        error: function(){
+          alert("error")
+        }
+
+      });
+    }
+    this.sample=function(){
+      console.log("tereterretere")
+      mynavigator.getCurrentPage()
+    }
+
+    this.receivefromallir = function (){
+      id=item_id
+
+      $.ajax({
+        url:""+localStorage.getItem("switch-site_url")+"/api/vi/ir/receive.json",
+        type:"POST",
+        data:{
+          "auth_token": localStorage.getItem("switch-auth_token"),
+        },
+        success:function(msg){
+          console.log(msg)
+        }
+      })
+    }
+
+
+
     this.login = function(){
       console.log("kiteruyan")
       site_url = localStorage.getItem('switch-site_url')
