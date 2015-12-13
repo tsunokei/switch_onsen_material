@@ -25,8 +25,8 @@
       //　名前
     ];
     // console.log(items)
-    console.log("eeyanke")
-    console.log((new Date()).getTime())
+
+
 
 
     this.newTodo = function() {//itemsリストに追加するよ
@@ -56,7 +56,24 @@
       console.log("ajaxしたい")
     }
     this.pushToNewIR = function(){
-      mynavigator.pushPage('newir/index.html');
+      console.log("kiterussu")
+      mynavigator.pushPage('newir/index.html',{animation:'lift'});
+      console.log("kiterussu")
+      $.ajax({
+        url: "" + localStorage.getItem("switch-site_url") + "/api/v1/ir/recieve.json",
+        type:"POST",
+        data:{
+          "auth_token": localStorage.getItem("switch-auth_token"),
+        },
+        success:function(msg){
+          console.log(msg)
+          mynavigator.pushPage('resister/index.html');
+        },
+        error:function(){
+          console.log("error")
+        }
+      });
+
     }
 
     this.getInfradInfo = function(){
@@ -85,7 +102,7 @@
 
             $scope.infrad = hoge2;
 
-    }
+    }.bind(this);
 
     this.send = function(item_id){
       // console.log("hage")
@@ -96,7 +113,7 @@
         window.id=item_id,
 
         $.ajax({
-          url: ""+localStorage.getItem("switch-site_url") +":80"+ "/api/v1/ir/send.json",
+          url: ""+localStorage.getItem("switch-site_url") +"/api/v1/ir/send.json",
           type: "POST",
           data: {
             "auth_token": localStorage.getItem("switch-auth_token"),
@@ -124,7 +141,7 @@
         success: function(msg){
           console.log(msg)
           console.log(success)
-          mynavigator.getCurrentPage();
+          // mynavigator.getCurrentPage();
         },
         error: function(){
           alert("error")
@@ -133,8 +150,11 @@
       });
     }
     this.sample=function(){
+
       console.log("tereterretere")
-      mynavigator.getCurrentPage()
+      mynavigator.getCurrentPage();
+      console.log("reloadしました")
+
     }
 
     this.receivefromallir = function (){
@@ -148,14 +168,18 @@
         },
         success:function(msg){
           console.log(msg)
+          mynavigator.pushPage('resister/index.html');
+        },
+        error:function(){
+          console.log("error")
         }
-      })
+      });
+
     }
 
 
 
     this.login = function(){
-      console.log("kiteruyan")
       site_url = localStorage.getItem('switch-site_url')
       identifier = $("#email_or_screen_name").val();
       password = $("#password").val();
@@ -209,7 +233,12 @@
     }
 
     this.pushToResister = function(){
+      console.log("hasitteruyann")
       mynavigator.pushPage('register/index.html');
+      console.log("hasitteru")
+
+
+
     }
 
     this.pushToHome = function(){

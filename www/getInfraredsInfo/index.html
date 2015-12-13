@@ -62,7 +62,8 @@
             <p>{{info}}</p>
           </div> -->
           <ons-list modifier="material" ng-init="switch.getInfradInfo();">
-            <ons-list-item id="{{item.id}}" modifier="tappable" ng-repeat="item in infrad" style="background-color:white" ng-click="switch.send(item.id);">
+
+            <ons-list-item id="{{item.id}} " modifier="tappable" ng-repeat="item in infrad" style="background-color:white" ng-click="switch.send(item.id);">
             {{item.name}}
             <!-- <p id="submit">ON</p> -->
           </ons-list-item>
