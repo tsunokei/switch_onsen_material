@@ -62,9 +62,9 @@
 
             <div class="form">
               <p>
-              <input type="text" size="40">
+              <input id="groupName" type="text" size="40">
               </p>
-              <ons-button modifier="material" onclick="switch.makeGroup();" class="addbutton" id="add">
+              <ons-button modifier="material" ng-click="switch.makeGroup(groupName,item.id);" class="addbutton" id="add">
               Add
               </ons-button>
               <div class="clear"></div>
@@ -77,9 +77,9 @@
               </ons-list-header>
               <!-- <ons-list-item modifier="material" class="list" ng-repeat="item in ~~~~~.Item"> -->
               <!-- <ons-list-item modifier="material" class="list"> -->
-              <ons-list-item id="{{item.id}}" modifier="tappable" ng-repeat="item in infrad" style="background-color:white; padding-top:15px" ng-click="" >
-                <label class="checkbox checkbox--material">
-                  <input type="checkbox" ng-model="item.done" class="checkbox__input checkbox--material__input">
+              <ons-list-item modifier="tappable" ng-repeat="item in infrad" style="background-color:white; padding-top:15px" ng-click="" >
+                <label class="checkbox checkbox--material" id="{{item.id}}">
+                  <input type="checkbox" class="checkbox__input checkbox--material__input" ng-click="get.id">
                   <div class="checkbox__checkmark checkbox--material__checkmark"></div>
                   {{item.name}}
                 </label>

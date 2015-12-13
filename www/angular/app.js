@@ -228,6 +228,42 @@
       })
     }
 
+    this.makeGroup = function(name,ir_id){
+
+        window.group_name = document.getElementById("groupName").value
+        window.id=ir_id
+        console.log(group_name)
+        console.log(id)
+
+      //   $.ajax({
+      //     url: ""+localStorage.getItem("switch-site_url") +":80"+ "/api/v1/group.json",
+      //     type: "POST",
+      //     data: {
+      //       "auth_token": localStorage.getItem("switch-auth_token"),
+      //       "name": group_name,
+      //     },
+      //     success:function(msg){
+      //       console.log(msg);
+      //     },
+      //     error:function(){
+      //       alert("error");
+      //     }
+      // })
+      //   $.ajax({
+      //     url: ""+localStorage.getItem("switch-site_url") +":80"+ "/api/v1/group.json",
+      //     type: "POST",
+      //     data: {
+      //       "auth_token": localStorage.getItem("switch-auth_token"),
+      //       "name": group_name,
+      //     },
+      //     success:function(msg){
+      //       console.log(msg);
+      //     },
+      //     error:function(){
+      //       alert("error");
+      //     }
+      // })
+    }
 
 
     this.selectedItem = -1;
