@@ -20,54 +20,31 @@
   <body>
     <!-- menu bar -->
 
-      <ons-page modifier="material" ng-controller="SwitchController as switch">
-        <ons-navigator var="mynavigator">
-          <ons-toolbar class="i-toolbar" modifier="material">
-            <div class="left">
-              <ons-toolbar-button ng-click="menu.open()" modifier="material">
-                <ons-icon icon="md-menu"></ons-icon>
-              </ons-toolbar-button>
-            </div>
-            <div class="center" id="submit">
-              getInfradInfo
-            </div>
-            <div class="right">
-            </div>
-            <div class="clear"></div>
-          </ons-toolbar>
+    <ons-page modifier="material" ng-controller="SwitchController as switch">
+      <ons-navigator var="mynavigator">
+        <ons-toolbar class="i-toolbar" modifier="material">
+          <div class="left">
+            <ons-toolbar-button ng-click="menu.open()" modifier="material">
+              <ons-icon icon="md-menu"></ons-icon>
+            </ons-toolbar-button>
+          </div>
+          <div class="center" id="submit">
+            getInfradInfo
+          </div>
+          <div class="right">
+          </div>
+          <div class="clear"></div>
+        </ons-toolbar>
+        <div class="main-content">
+        <br>
+        <ons-list modifier="material" ng-init="switch.getInfradInfo();">
+          <ons-list-item id="{{item.id}}" modifier="tappable" ng-repeat="item in infrad" style="background-color:white" ng-click="switch.send(item.id);">
 
-          <div class="main-content">
-
-          <br>
-<!--             <ons-button modifier="material" ng-click="switch.getInfradInfo();" class="addbutton" id="add">
-              Add
-            </ons-button> -->
-            <br>
-
-<!--             <div class="i-list home">
-              <div class="i-list-inner">
-                <div class="i-list-left" id="ir">
-                  kiteru
-                  <div class="icon">
-                    <img src="">
-                  </div>
-                </div>
-                <div class="irname">
-                </div>
-              </div>
-            </div> -->
-
-
-<!--           <div ng-controller = "infrad">
-            <p>{{info}}</p>
-          </div> -->
-          <ons-list modifier="material" ng-init="switch.getInfradInfo();">
-
-            <ons-list-item id="{{item.id}} " modifier="tappable" ng-repeat="item in infrad" style="background-color:white" ng-click="switch.send(item.id);">
             {{item.name}}
-            <!-- <p id="submit">ON</p> -->
+
           </ons-list-item>
         </ons-list>
+
         <ons-button modifier="material" ng-click="switch.sample();">
             reload
         </ons-button>
@@ -75,4 +52,3 @@
         </ons-navigator>
       </ons-page>
 
-    <!-- homeページ -->

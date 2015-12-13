@@ -10,13 +10,12 @@
     <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css" type="text/css" media="all" />
     <link rel="stylesheet" href="angular/app.css" type="text/css" media="all" />
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="infradTable/style.css" type="text/css">
     <script src="lib/onsenui/js/onsenui.js"></script>
     <script src="lib/angular/angular.js"></script>
     <script src="lib/onsenui/js/angular-onsenui.js"></script>
     <script src="angular/app.js"></script>
     <script src="jquery-2.1.4.min.js"></script>
-    <title>全てのインフレッド</title>
+    <title>rename</title>
   </head>
   <body>
     <!-- menu bar -->
@@ -30,7 +29,7 @@
               </ons-toolbar-button>
             </div>
             <div class="center" id="submit">
-              全てのインフレッド
+              Rename
             </div>
             <div class="right">
             </div>
@@ -40,18 +39,32 @@
           <div class="main-content">
           <br>
           <br>
-          <div class="addbutton allinfrad">
-            <ons-button modifier="material" onclick="mynavigator.pushPage('groupAdd/index.html')" class="addbutton">
+<!--           <div class="addbutton allinfrad">
+            <ons-button modifier="material" onclick="" class="addbutton">
               Add
             </ons-button>
-          </div>
-          <ons-list　modifier="material" ng-init="switch.getInfradInfo();">
+          </div> -->
+          <div style="text-align: center">
+          <!-- <ons-list　modifier="material" ng-init="switch.getInfradInfo();"> -->
 
-            <ons-list-item id="{{item.id}}" modifier="tappable" ng-repeat="item in infrad" style="background-color:white" ng-click="switch.send(item.id);">
+          <section style="padding: 8px">
+          <input type="text" class="text-input" ng-model="text" placeholder="Type here" style="display: block; width: 100%">
+          </section>
+
+          <section style="padding: 0 8px 8px">
+          <ons-button modifier="large" ng-click="switch.renameInfrad(text);">Submit</ons-button>
+          </section>
+
+
+<!--           <section style="padding: 0 8px 8px">
+          <textarea class="textarea" ng-model="text2" placeholder="Type here" style="width: 100%; height: 100px;"></textarea>
+          </section> -->
+
+<!--             <ons-list-item id="{{item.id}}" modifier="tappable" ng-repeat="item in infrad" style="background-color:white">
             {{item.name}}
           </ons-list-item>
-        </ons-list>
+ -->        </ons-list>
         </ons-navigator>
-      </ons-page>
+      <!-- </ons-page> -->
     </ons-template>
     <!-- homeページ -->

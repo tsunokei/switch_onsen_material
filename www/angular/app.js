@@ -56,6 +56,7 @@
       console.log("ajaxしたい")
     }
     this.pushToNewIR = function(){
+
       console.log("kiterussu")
       mynavigator.pushPage('newir/index.html',{animation:'lift'});
       console.log("kiterussu")
@@ -74,10 +75,14 @@
         }
       });
 
+
+
+
     }
 
     this.getInfradInfo = function(){
           console.log("eeyan")
+          // localStorage.removeItem()
             $.ajax({
                 url: ""+localStorage.getItem("switch-site_url")+"/api/v1/ir.json"+"?"+((new Date).getTime()),
                 type: "GET",
@@ -86,9 +91,21 @@
                 },
                 success: function(msg){
                   console.log(msg)
+
+                  hoge=msg
+                  hoge2=msg["response"]["infrareds"]
+                  console.log(hoge2)
+                  obj = JSON.stringify(hoge2);
+                  // localStorage.removeItem("l_obj");
+                  localStorage.setItem("l_obj",obj);
+
+                  // console.log(hoge2);
+
+
                   hoge2=msg["response"]["infrareds"]
                   obj = JSON.stringify(hoge2);
                   localStorage.setItem("l_obj",obj);
+
 
                 },
                 error: function(){
@@ -97,7 +114,9 @@
             });
 
             obj2 = localStorage.getItem("l_obj");
-            var hoge2 = JSON.parse(obj2);
+
+            hoge2 = JSON.parse(obj2);
+            // console.log(hoge2);
             console.log(hoge2)
 
             $scope.infrad = hoge2;
@@ -233,9 +252,11 @@
     }
 
     this.pushToResister = function(){
+
       console.log("hasitteruyann")
       mynavigator.pushPage('register/index.html');
       console.log("hasitteru")
+
 
 
 
@@ -243,7 +264,9 @@
 
     this.pushToHome = function(){
       console.log("kiteru")
-      location.href="index.html"
+      // location.href="index.html"
+      mynavigator.popPage('',{animation:"slide"})
+
     }
     this.pushToLoginpage = function(){
       mynavigator.resetToPage("../login/index.html",{animation:"lift"})
@@ -252,31 +275,36 @@
       mynavigator.resetToPage("../signup/index.html",{animation:"lift"})
     }
 
-    // $(function(){
-    //   console.log("hage")
-    //   $("#submit").on("click" , function(){
-    //     console.log("hoge")
-    //     // aircon_token="1KiJPrFitLQAv0ZuqDAMmg",
-    //     aircon_token="aC_ZBshcAXi1kVJdpLQ2lw",
-    //     window.id=22,
+    this.renameInfrad = function(item_id,name){
 
-    //     $.ajax({
-    //       url: ""+localStorage.getItem("switch-site_url")+"/api/v1/ir.json",
-    //       type: "POST",
-    //       data: {
-    //         "auth_token": aircon_token,
-    //         "ir_id": id
-    //       },
-    //       success:function(msg){
-    //         alert("success");
-    //         console.log("kiteru");
-    //       },
-    //       error:function(){
-    //         alert("error");
-    //       }
-    //     });
-    //   })
-    // });
+        // console.log(id)
+        // console.log(item_name)
+        // window.id=item_id,
+        window.item_name = document.getElementById("newName").value
+        // $scope.text=item_name,
+        console.log(item_id)
+        console.log(item_name)
+
+        $.ajax({
+          url: ""+localStorage.getItem("switch-site_url") +":80"+ "/api/v1/ir/rename.json",
+          type: "PUT",
+          data: {
+            "auth_token": localStorage.getItem("switch-auth_token"),
+            "name": item_name,
+            "ir_id": item_id
+          },
+          success:function(msg){
+            console.log("kiteru");
+            // getInfradInfo.call();
+            // window.location.reload();
+          },
+          error:function(){
+            alert("error");
+          }
+      })
+    }
+
+
 
     this.selectedItem = -1;
   });
