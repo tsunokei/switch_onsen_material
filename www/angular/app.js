@@ -24,7 +24,9 @@
       // }
       //　名前
     ];
-    console.log(items)
+    // console.log(items)
+
+
 
 
     this.newTodo = function() {//itemsリストに追加するよ
@@ -54,6 +56,30 @@
       console.log("ajaxしたい")
     }
     this.pushToNewIR = function(){
+<<<<<<< HEAD
+
+      console.log("kiterussu")
+      mynavigator.pushPage('newir/index.html',{animation:'lift'});
+      console.log("kiterussu")
+      $.ajax({
+        url: "" + localStorage.getItem("switch-site_url") + "/api/v1/ir/recieve.json",
+        type:"POST",
+        data:{
+          "auth_token": localStorage.getItem("switch-auth_token"),
+        },
+        success:function(msg){
+          console.log(msg)
+          mynavigator.pushPage('resister/index.html');
+        },
+        error:function(){
+          console.log("error")
+        }
+      });
+
+
+
+
+=======
       mynavigator.pushPage('newir/index.html',{animation:"lift"});
     }
 
@@ -62,13 +88,14 @@
       window.id=item_id,
       console.log(id);
       mynavigator.pushPage('rename/index2.html');
+>>>>>>> c86c84d2c377cd533e56bee6e44235066836785f
     }
 
     this.getInfradInfo = function(){
           console.log("eeyan")
           // localStorage.removeItem()
             $.ajax({
-                url: ""+localStorage.getItem("switch-site_url")+"/api/v1/ir.json",
+                url: ""+localStorage.getItem("switch-site_url")+"/api/v1/ir.json"+"?"+((new Date).getTime()),
                 type: "GET",
                 data:{
                     "auth_token": localStorage.getItem("switch-auth_token")
@@ -77,6 +104,7 @@
                   console.log(msg)
 
                   hoge=msg
+<<<<<<< HEAD
                   hoge2=msg["response"]["infrareds"]
                   console.log(hoge2)
                   obj = JSON.stringify(hoge2);
@@ -86,10 +114,24 @@
                   // console.log(hoge2);
 
 
+=======
+>>>>>>> c86c84d2c377cd533e56bee6e44235066836785f
+                  hoge2=msg["response"]["infrareds"]
+                  console.log(hoge2)
+                  obj = JSON.stringify(hoge2);
+                  // localStorage.removeItem("l_obj");
+                  localStorage.setItem("l_obj",obj);
+
+<<<<<<< HEAD
+=======
+                  // console.log(hoge2);
+
+
                   hoge2=msg["response"]["infrareds"]
                   obj = JSON.stringify(hoge2);
                   localStorage.setItem("l_obj",obj);
 
+>>>>>>> c86c84d2c377cd533e56bee6e44235066836785f
 
                 },
                 error: function(){
@@ -105,7 +147,7 @@
 
             $scope.infrad = hoge2;
 
-    }
+    }.bind(this);
 
     this.send = function(item_id){
       // console.log("hage")
@@ -116,7 +158,7 @@
         window.id=item_id,
 
         $.ajax({
-          url: ""+localStorage.getItem("switch-site_url") +":80"+ "/api/v1/ir/send.json",
+          url: ""+localStorage.getItem("switch-site_url") +"/api/v1/ir/send.json",
           type: "POST",
           data: {
             "auth_token": localStorage.getItem("switch-auth_token"),
@@ -131,8 +173,58 @@
         // });
       })
     }
+    this.removeir  = function(item_id){
+      id=item_id
+
+      $.ajax({
+        url: ""+localStorage.getItem("switch-site_url") + "/api/vi/ir.json",
+        type: "DELETE",
+        data:{
+          "auth_token": localStorage.getItem("switch-auth_token"),
+          "ir_id": id
+        },
+        success: function(msg){
+          console.log(msg)
+          console.log(success)
+          // mynavigator.getCurrentPage();
+        },
+        error: function(){
+          alert("error")
+        }
+
+      });
+    }
+    this.sample=function(){
+
+      console.log("tereterretere")
+      mynavigator.getCurrentPage();
+      console.log("reloadしました")
+
+    }
+
+    this.receivefromallir = function (){
+      id=item_id
+
+      $.ajax({
+        url:""+localStorage.getItem("switch-site_url")+"/api/vi/ir/receive.json",
+        type:"POST",
+        data:{
+          "auth_token": localStorage.getItem("switch-auth_token"),
+        },
+        success:function(msg){
+          console.log(msg)
+          mynavigator.pushPage('resister/index.html');
+        },
+        error:function(){
+          console.log("error")
+        }
+      });
+
+    }
+
+
+
     this.login = function(){
-      console.log("kiteruyan")
       site_url = localStorage.getItem('switch-site_url')
       identifier = $("#email_or_screen_name").val();
       password = $("#password").val();
@@ -186,7 +278,16 @@
     }
 
     this.pushToResister = function(){
-      mynavigator.pushPage('register/index.html',{animation:"lift"});
+
+
+      console.log("hasitteruyann")
+      mynavigator.pushPage('register/index.html');
+      console.log("hasitteru")
+
+
+
+
+
     }
 
     this.pushToHome = function(){
@@ -195,8 +296,11 @@
       mynavigator.popPage('',{animation:"slide"})
 
     }
-    this.pushToLogin = function(){
+    this.pushToLoginpage = function(){
       mynavigator.resetToPage("../login/index.html",{animation:"lift"})
+    }
+    this.pushToSignuppage=function(){
+      mynavigator.resetToPage("../signup/index.html",{animation:"lift"})
     }
 
     this.renameInfrad = function(item_id,name){
@@ -227,6 +331,38 @@
           }
       })
     }
+
+
+
+    this.renameInfrad = function(item_id,name){
+
+        // console.log(id)
+        // console.log(item_name)
+        // window.id=item_id,
+        window.item_name = document.getElementById("newName").value
+        // $scope.text=item_name,
+        console.log(item_id)
+        console.log(item_name)
+
+        $.ajax({
+          url: ""+localStorage.getItem("switch-site_url") +":80"+ "/api/v1/ir/rename.json",
+          type: "PUT",
+          data: {
+            "auth_token": localStorage.getItem("switch-auth_token"),
+            "name": item_name,
+            "ir_id": item_id
+          },
+          success:function(msg){
+            console.log("kiteru");
+            // getInfradInfo.call();
+            // window.location.reload();
+          },
+          error:function(){
+            alert("error");
+          }
+      })
+    }
+
 
 
 
