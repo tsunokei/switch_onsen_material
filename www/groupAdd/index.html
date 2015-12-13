@@ -79,7 +79,7 @@
               <!-- <ons-list-item modifier="material" class="list"> -->
               <ons-list-item modifier="tappable" ng-repeat="item in infrad" style="background-color:white; padding-top:15px" ng-click="" >
                 <label class="checkbox checkbox--material" id="{{item.id}}">
-                  <input type="checkbox" class="checkbox__input checkbox--material__input" ng-click="get.id">
+                  <input type="checkbox" class="checkbox__input checkbox--material__input" ng-click="switch.makeGroup(groupName,item.id)">
                   <div class="checkbox__checkmark checkbox--material__checkmark"></div>
                   {{item.name}}
                 </label>
