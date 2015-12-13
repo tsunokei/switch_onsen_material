@@ -56,7 +56,7 @@
       console.log("ajaxしたい")
     }
     this.pushToNewIR = function(){
-<<<<<<< HEAD
+
 
       console.log("kiterussu")
       mynavigator.pushPage('newir/index.html',{animation:'lift'});
