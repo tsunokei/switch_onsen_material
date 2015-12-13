@@ -62,14 +62,14 @@
       mynavigator.pushPage('newir/index.html',{animation:'lift'});
       console.log("kiterussu")
       $.ajax({
-        url: "" + localStorage.getItem("switch-site_url") + "/api/v1/ir/recieve.json",
+        url: "" + localStorage.getItem("switch-site_url") + "/api/v1/ir/receive.json",
         type:"POST",
         data:{
           "auth_token": localStorage.getItem("switch-auth_token"),
         },
         success:function(msg){
           console.log(msg)
-          mynavigator.pushPage('resister/index.html');
+          mynavigator.pushPage('register/index.html');
         },
         error:function(){
           console.log("error")
@@ -90,7 +90,7 @@
           console.log("eeyan")
           // localStorage.removeItem()
             $.ajax({
-                url: ""+localStorage.getItem("switch-site_url")+"/api/v1/ir.json"+"?"+((new Date).getTime()),
+                url: ""+localStorage.getItem("switch-site_url")+"/api/v1/ir.json",
                 type: "GET",
                 data:{
                     "auth_token": localStorage.getItem("switch-auth_token")
@@ -280,18 +280,20 @@
       mynavigator.resetToPage("../signup/index.html",{animation:"lift"})
     }
 
-    this.renameInfrad = function(item_id,name){
+    this.renameInfrad = function(item_id,newName){
 
         // console.log(id)
         // console.log(item_name)
         // window.id=item_id,
+        console.log(newName)
         window.item_name = document.getElementById("newName").value
         // $scope.text=item_name,
         console.log(item_id)
-        console.log(item_name)
+
+
 
         $.ajax({
-          url: ""+localStorage.getItem("switch-site_url") +":80"+ "/api/v1/ir/rename.json",
+          url: ""+localStorage.getItem("switch-site_url") + "/api/v1/ir/rename.json",
           type: "PUT",
           data: {
             "auth_token": localStorage.getItem("switch-auth_token"),
@@ -299,14 +301,15 @@
             "ir_id": item_id
           },
           success:function(msg){
-            console.log("kiteru");
+            console.log(msg);
             // getInfradInfo.call();
             // window.location.reload();
           },
           error:function(){
             alert("error");
           }
-      })
+      });
+
     }
 
 
@@ -322,7 +325,7 @@
         console.log(item_name)
 
         $.ajax({
-          url: ""+localStorage.getItem("switch-site_url") +":80"+ "/api/v1/ir/rename.json",
+          url: ""+localStorage.getItem("switch-site_url")+"/api/v1/ir/rename.json",
           type: "PUT",
           data: {
             "auth_token": localStorage.getItem("switch-auth_token"),

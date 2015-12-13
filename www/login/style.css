@@ -16,15 +16,17 @@
 	height:80px;
 }
 .frame{
-	padding-top:10px;
-	padding-bottom:40px;
+	padding-top:90px;
+
+	/*padding-bottom:40px;*/
 	background-color:white;
 	box-shadow: 0.1px 0.1px 1px 0.001px;
 	width: 94%;
 	margin: 0 auto;
-
 	/*background-color:white;*/
 }
+
+
 
 .forms label{
 	/*margin-left:10px;*/
@@ -37,24 +39,22 @@
 .forms input{
 	float: left;
 }
-.submit{
-	float:left;
-}
+
 #password{
 	/*margin-left: 60px;*/
 }
 .tosignup{
-	width:140px;
-	text-align:left;
+	width:50px;
+	/*text-align:left;*/
 	float:left;
-	margin-left:20px;
+	/*margin-left:20px;*/
 	/*margin-bottom:-10px;*/
 }
 .submit{
-	width: 60px;
+	/*width: 60px;*/
 	float:left;
-	margin-right:0px;
-	margin-left: 110px;
+	/*margin-right:0px;*/
+	/*margin-left: 110px;*/
 }
 .frame.inner{
 	box-shadow:0px 0px 0px 0px;
