@@ -75,6 +75,7 @@
           console.log("error")
         }
       });
+
     }
 
   // var id;
@@ -98,19 +99,15 @@
                   console.log(msg)
 
                   hoge=msg
-
                   hoge2=msg["response"]["infrareds"]
                   console.log(hoge2)
                   obj = JSON.stringify(hoge2);
                   // localStorage.removeItem("l_obj");
                   localStorage.setItem("l_obj",obj);
-
-      // console.log(hoge2);
-
-
                   hoge2=msg["response"]["infrareds"]
                   obj = JSON.stringify(hoge2);
                   localStorage.setItem("l_obj",obj);
+
 
 
                 },
@@ -343,6 +340,42 @@
       })
     }
 
+    this.makeGroup = function(name,ir_id){
+
+        window.group_name = document.getElementById("groupName").value
+        window.id=ir_id
+        console.log(group_name)
+        console.log(id)
+
+      //   $.ajax({
+      //     url: ""+localStorage.getItem("switch-site_url") +":80"+ "/api/v1/group.json",
+      //     type: "POST",
+      //     data: {
+      //       "auth_token": localStorage.getItem("switch-auth_token"),
+      //       "name": group_name,
+      //     },
+      //     success:function(msg){
+      //       console.log(msg);
+      //     },
+      //     error:function(){
+      //       alert("error");
+      //     }
+      // })
+      //   $.ajax({
+      //     url: ""+localStorage.getItem("switch-site_url") +":80"+ "/api/v1/group.json",
+      //     type: "POST",
+      //     data: {
+      //       "auth_token": localStorage.getItem("switch-auth_token"),
+      //       "name": group_name,
+      //     },
+      //     success:function(msg){
+      //       console.log(msg);
+      //     },
+      //     error:function(){
+      //       alert("error");
+      //     }
+      // })
+    }
 
 
 
